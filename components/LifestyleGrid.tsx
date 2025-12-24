@@ -8,7 +8,7 @@ const items = [
     {
         id: 1,
         type: 'image',
-        src: '/images/mission_paris_social_v2.png',
+        src: '/images/city_paris.png',
         alt: 'Parisian Rooftop',
         size: 'tall',
         label: 'Rooftops'
@@ -25,7 +25,7 @@ const items = [
     {
         id: 3,
         type: 'image',
-        src: '/images/mission_paris_group.png',
+        src: '/images/city_rome.png',
         alt: 'Terrace Culture',
         size: 'wide',
         label: 'Terrasses'
@@ -50,7 +50,7 @@ const items = [
     {
         id: 6,
         type: 'image',
-        src: '/images/mission_local.png',
+        src: '/images/city_tokyo.png',
         alt: 'Hidden Spots',
         size: 'wide',
         label: 'Secrets'
@@ -76,20 +76,17 @@ export default function LifestyleGrid() {
                 <div className={styles.carouselWrapper}>
                     <div className={styles.carouselTrack}>
                         {[
-                            { name: 'Paris', image: '/images/mission_paris_social_v2.png' },
-                            { name: 'New York', image: '/images/mission_paris_social.png' },
-                            { name: 'Rome', image: '/images/mission_paris_group.png' },
-                            { name: 'Milan', image: '/images/mission_culture.png' },
-                            { name: 'Lisbonne', image: '/images/mission_local.png' },
-                            { name: 'Londres', image: '/images/mission_paris_social_v2.png' },
-                            { name: 'Seoul', image: '/images/mission_paris_social.png' },
-                            { name: 'Tokyo', image: '/images/mission_paris_group.png' },
-                            { name: 'Bali', image: '/images/mission_culture.png' },
-                            // Duplicates for infinity
-                            { name: 'Paris', image: '/images/mission_paris_social_v2.png' },
-                            { name: 'New York', image: '/images/mission_paris_social.png' },
-                            { name: 'Rome', image: '/images/mission_paris_group.png' },
-                            { name: 'Milan', image: '/images/mission_culture.png' }
+                            { name: 'Paris', image: '/images/city_paris.png' },
+                            { name: 'New York', image: '/images/city_newyork.png' },
+                            { name: 'Rome', image: '/images/city_rome.png' },
+                            { name: 'Londres', image: '/images/city_london.png' },
+                            { name: 'Tokyo', image: '/images/city_tokyo.png' },
+                            // Duplicates for infinity loop
+                            { name: 'Paris', image: '/images/city_paris.png' },
+                            { name: 'New York', image: '/images/city_newyork.png' },
+                            { name: 'Rome', image: '/images/city_rome.png' },
+                            { name: 'Londres', image: '/images/city_london.png' },
+                            { name: 'Tokyo', image: '/images/city_tokyo.png' }
                         ].map((city, index) => (
                             <div key={index} className={styles.cityCard}>
                                 <div className={styles.imageWrapper}>
