@@ -88,8 +88,8 @@
 .visualWrapper {
     position: relative;
     width: 100%;
-    max-width: 300px;
-    /* Reduced from 400px */
+    max-width: 260px;
+    /* Reduced further from 300px */
     height: 600px;
     /* Reduced from 700px */
 }
@@ -140,8 +140,8 @@
     .mobileVisual {
         display: block;
         width: 100%;
-        max-width: 280px;
-        /* Limit size on mobile */
+        max-width: 240px;
+        /* Reduced further from 280px */
         margin: 3rem auto;
         /* Center it */
     }
