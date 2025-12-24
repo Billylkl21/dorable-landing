@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-    padding: 8rem 2rem 2rem;
+    padding: 4rem 2rem 2rem;
     background: #fff;
     overflow: hidden;
     display: flex;
@@ -11,7 +11,7 @@
 
 .statementWrapper {
     max-width: 800px;
-    margin: 0 auto 6rem;
+    margin: 0 auto 3rem;
     text-align: center;
 }
 
