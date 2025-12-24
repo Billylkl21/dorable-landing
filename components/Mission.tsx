@@ -63,8 +63,8 @@ export default function Mission() {
                         >
                             <h4 className={styles.smallHeadline}>À quoi les reconnaît-on ?</h4>
                             <p className={styles.textSmall}>
-                                Des rebelles de la connexion authentique. Ils ont troqué les écrans pour les regards, et les likes pour les <span className="serif italic">vrais souvenirs</span>.
-                                Pour eux, la ville est un terrain de jeu à reconquérir ensemble.
+                                Des rebelles de la connexion authentique. Ils ont une app pour contrôler leur temps d'écran, sont toujours partants pour une nouvelle expo, et fuient les "dates" scénarisés.
+                                Ils sont <span className="serif italic">imparfaits, curieux, et vivants</span>.
                             </p>
                             <span className={styles.readTime}>4 MIN READ</span>
                         </motion.article>
