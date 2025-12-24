@@ -47,10 +47,10 @@ export default function Mission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <h4 className={styles.smallHeadline}>Redonner vie à la ville</h4>
+                            <h4 className={styles.smallHeadline}>Pourquoi ils envahissent nos villes ?</h4>
                             <p className={styles.textSmall}>
-                                Nos métropoles ne sont pas des musées, mais des organismes vivants.
-                                Finie l'ère de la solitude au milieu de la foule : Dorable réactive les <span className="serif italic">connexions spontanées</span>.
+                                C'est une OPA hostile sur la morosité. Ils hackent le code social qui nous interdit de nous parler.
+                                Ils transforment chaque coin de rue en opportunité. Une vague d'optimisme radical qui ne demande <span className="serif italic">aucune permission</span>.
                             </p>
                             <span className={styles.readTime}>2 MIN READ</span>
                         </motion.article>
