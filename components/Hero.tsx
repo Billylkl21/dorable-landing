@@ -9,10 +9,6 @@ export default function Hero() {
     return (
         <section id="join" className={styles.heroSection}>
             <div className={styles.container}>
-                <div className={styles.liveIndicator}>
-                    <span className={styles.liveDot}></span>
-                    <span>42 sorties spontanées en cours à Paris ce soir</span>
-                </div>
                 <div className={styles.textContent}>
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -47,13 +43,19 @@ export default function Hero() {
                         className="reveal delay-3"
                         style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}
                     >
-                        <a href="#join" className={`${styles.button} button-premium`}>
+                        <motion.a
+                            href="#join"
+                            className={`${styles.button} button-premium`}
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
                             Rejoindre
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '0.8rem' }}>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
-                        </a>
+                        </motion.a>
 
                         <div className={styles.socialProof}>
                             <div className={styles.marqueeWrapper}>
