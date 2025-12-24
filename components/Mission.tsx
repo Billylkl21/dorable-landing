@@ -49,7 +49,7 @@ export default function Mission() {
                         >
                             <h4 className={styles.smallHeadline}>Pourquoi ils envahissent nos villes ?</h4>
                             <p className={styles.textSmall}>
-                                Pour sauver nos bistrots, nos théâtres, nos salles d'escalade. Ils transforment leurs passions en prétexte.
+                                Pour sauver nos bistrots, nos théâtres, ou même partir camper en montagne sur un coup de tête. Ils transforment leurs passions en prétexte.
                                 Plutôt que de liker, ils sortent. Ils redonnent du souffle à l'économie locale et de l'âme à la <span className="serif italic">culture de quartier</span>.
                             </p>
                             <span className={styles.readTime}>2 MIN READ</span>
