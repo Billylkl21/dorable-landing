@@ -173,19 +173,19 @@ export default function Hero() {
                         </div>
                         {/* Decorative Studio Element */}
                         <div className={styles.aura} />
+                    </div>
 
-                        {/* Download Buttons below the phone */}
-                        <div className={styles.downloadButtons}>
-                            <div className={styles.storeImageWrapper}>
-                                <Image
-                                    src="/images/app_stores.png"
-                                    alt="Disponible sur Google Play et App Store"
-                                    width={300}
-                                    height={80}
-                                    className={styles.storeImage}
-                                    priority
-                                />
-                            </div>
+                    {/* Download Buttons below the phone (Outside 3D stage) */}
+                    <div className={styles.downloadButtons}>
+                        <div className={styles.storeImageWrapper}>
+                            <Image
+                                src="/images/app_stores.png"
+                                alt="Disponible sur Google Play et App Store"
+                                width={300}
+                                height={80}
+                                className={styles.storeImage}
+                                priority
+                            />
                         </div>
                     </div>
                 </motion.div>
