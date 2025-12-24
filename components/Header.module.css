@@ -36,7 +36,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
+    /* Increased to allow full single line */
     gap: 2rem;
 }
 
@@ -44,8 +45,6 @@
     display: flex;
     align-items: center;
     gap: 3rem;
-    white-space: nowrap;
-    /* Force single line */
 }
 
 .logoLink {
@@ -71,6 +70,8 @@
     letter-spacing: 0.15em;
     transition: var(--transition-smooth);
     opacity: 0.8;
+    white-space: nowrap;
+    /* Force single line */
 }
 
 .link:hover {
