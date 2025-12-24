@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from './Hero.module.css';
 import IPhoneMockup from './IPhoneMockup';
 
@@ -175,25 +176,16 @@ export default function Hero() {
 
                         {/* Download Buttons below the phone */}
                         <div className={styles.downloadButtons}>
-                            <a href="#" className={styles.storeButton}>
-                                <svg className={styles.storeIcon} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.63-.03 2.76.96 3.65.96.94 0 2.45-1.16 4.13-1 2.15.2 3.8 1.45 4.83 2.97-4.14 2-3.47 7.7 1.28 9.68zM13 3.5c.86-1.12 1.55-2.58 1.34-4-.42.06-1.92.54-2.67 1.42-.69.81-1.28 2.05-1.1 3.23.47.04 1.58-.53 2.43-.65z" fill="currentColor" />
-                                </svg>
-                                <div className={styles.storeText}>
-                                    <span className={styles.storeLabel}>Télécharger sur</span>
-                                    <span className={styles.storeName}>App Store</span>
-                                </div>
-                            </a>
-
-                            <a href="#" className={styles.storeButton}>
-                                <svg className={styles.storeIcon} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3,20.5V3.5C3,2.91,3.34,2.39,3.84,2.15L13.69,12L3.84,21.85C3.34,21.6,3,21.09,3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.3,12.5L17.38,15.42L15.12,13.17L17.38,10.92L20.3,13.84C20.59,14.13,20.59,14.61,20.3,14.9L20.3,12.5M16.81,8.88L14.54,11.15L6.05,2.66L16.81,8.88Z" fill="currentColor" />
-                                </svg>
-                                <div className={styles.storeText}>
-                                    <span className={styles.storeLabel}>DISPO SUR</span>
-                                    <span className={styles.storeName}>Google Play</span>
-                                </div>
-                            </a>
+                            <div className={styles.storeImageWrapper}>
+                                <Image
+                                    src="/images/app_stores.png"
+                                    alt="Disponible sur Google Play et App Store"
+                                    width={300}
+                                    height={80}
+                                    className={styles.storeImage}
+                                    priority
+                                />
+                            </div>
                         </div>
                     </div>
                 </motion.div>
