@@ -17,7 +17,7 @@ export default function Mission() {
                 <div className={styles.newspaperHeader}>
                     <div className={styles.metaRow}>
                         <span>ÉDITION GLOBALE</span>
-                        <span>VOL. 01 — NO. 83</span>
+                        <span>VOL. 01 — NO. 001 — ILS SONT FOUS CES FRANÇAIS</span>
                         <span>{new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase()}</span>
                     </div>
                     <motion.h2
