@@ -80,7 +80,10 @@
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid transparent;
+    /* Transparent for layout, colored by ::before */
+    position: relative;
+    /* Anchor for pseudo-element */
 
     border-radius: var(--radius-pill);
     font-family: var(--font-mono);
@@ -93,7 +96,28 @@
     margin-bottom: 2.5rem;
     box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.03),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.badge::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    /* Cover the border area */
+    border-radius: inherit;
+    padding: 1px;
+    /* Border width */
+    background: linear-gradient(135deg, #fbcfe8, #d8b4fe, #818cf8);
+    /* Pastel Pink -> Purple -> Indigo */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .visualContent {
