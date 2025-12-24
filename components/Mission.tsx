@@ -115,7 +115,7 @@ export default function Mission() {
                             <p className={styles.textSmall}>
                                 Pas de vitrine, pas de performance. La rencontre ne se <span className="serif italic">consomme</span> pas, elle s'incarne.
                             </p>
-                            <span className={styles.readTime}>3 MIN READ</span>
+                            <span className={styles.readTime}>5 SEC READ</span>
                         </motion.article>
 
                         <motion.article
