@@ -15,7 +15,7 @@ export default function Hero() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className={styles.badge}>
-                            LE PHÉNOMÈNE SOCIAL DE L'ANNÉE
+                            LE SOCIAL CLUB NOUVELLE GÉNÉRATION
                         </span>
                     </motion.div>
 
