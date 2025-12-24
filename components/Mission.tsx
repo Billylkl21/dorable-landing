@@ -10,7 +10,7 @@ export default function Mission() {
                 className={styles.paperContainer}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.005, translateY: -5, boxShadow: "0 30px 60px rgba(0,0,0,0.15)" }}
+                whileHover={{ scale: 1.02, translateY: -8, boxShadow: "0 40px 80px rgba(0,0,0,0.12)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-10%" }}
             >
