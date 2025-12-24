@@ -380,13 +380,19 @@
 }
 
 .downloadButtons {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    /* More space */
     display: flex;
     justify-content: center;
     gap: 1rem;
     position: relative;
-    z-index: 5;
+    z-index: 100;
+    /* High z-index */
     flex-wrap: wrap;
+    transform-style: flat;
+    /* Enforce 2D */
+    isolation: isolate;
+    /* New stacking context */
 }
 
 .storeButton {
@@ -433,7 +439,7 @@
 }
 
 .storeImageWrapper {
-    width: 250px;
+    width: 220px;
     height: auto;
     transition: transform 0.2s ease;
     transform: none !important;
