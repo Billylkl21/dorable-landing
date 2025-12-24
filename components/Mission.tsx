@@ -94,11 +94,11 @@ export default function Mission() {
                             <h3 className={styles.headline}>Qui sont les Adorables ?</h3>
                             <div className={styles.content}>
                                 <span className={styles.dropCap}>C</span>'est une insurrection douce contre la tyrannie du prévu.
-                                Dans un monde où chaque seconde est optimisée, ils commettent l'acte le plus radical qui soit : se laisser surprendre.
-                                Ils ont troqué la sécurité des algorithmes pour le vertige du réel.
-                                Ce ne sont pas des utilisateurs, ce sont des dissidents du numérique qui réclament le droit à l'imprévu.
-                                Leur QG ? La ville. Leur arme ? L'audace.
-                                Ils ne cherchent pas à matcher, ils cherchent à vivre.
+                                Une génération qui refuse d'être spectatrice de sa propre jeunesse derrière un écran.
+                                Ils boycottent la perfection digitale pour le grain du réel, préférant une galère mémorable à une soirée "parfaite" mais vide.
+                                Ce ne sont pas des utilisateurs, ce sont les nouveaux dissidents du lien social qui réclament le droit à l'imprévu.
+                                Leur QG ? La rue. Leur arme ? L'audace.
+                                Ils ne cherchent pas à matcher, ils cherchent à exister, maintenant.
                             </div>
                         </div>
                     </motion.div>
