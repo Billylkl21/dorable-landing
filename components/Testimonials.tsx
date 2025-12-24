@@ -10,7 +10,7 @@ const testimonials = [
         text: "Dorable rend les sorties tellement plus simples. Je ne me prends plus la tête pour organiser, je rejoins juste ce qui me plaît.",
         name: "Clara M.",
         role: "Membre depuis Janvier",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+        avatar: "https://i.pravatar.cc/150?img=5",
         rating: 5.0
     },
     {
@@ -18,7 +18,7 @@ const testimonials = [
         text: "J'adore la communauté. Ça fait du bien de savoir qu'on n'est pas seul à vouloir sortir spontanément à Paris.",
         name: "Thomas R.",
         role: "Membre Fondateur",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+        avatar: "https://i.pravatar.cc/150?img=8",
         rating: 5.0
     },
     {
@@ -26,7 +26,7 @@ const testimonials = [
         text: "L'interface est super fluide et clean. Rien de compliqué, on va à l'essentiel : la rencontre.",
         name: "Sarah L.",
         role: "Paris 11ème",
-        avatar: "https://i.pravatar.cc/150?u=a04258114e29026302d",
+        avatar: "https://i.pravatar.cc/150?img=10",
         rating: 5.0
     },
     {
@@ -34,7 +34,7 @@ const testimonials = [
         text: "Franchement utile. Ça me permet de découvrir des expos que j'aurais ratées et de rencontrer des gens qui ont les mêmes goûts.",
         name: "Julie B.",
         role: "Membre VIP",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d", // Reusing for consistency style but distinct
+        avatar: "https://i.pravatar.cc/150?img=16",
         rating: 5.0
     },
     {
@@ -42,7 +42,7 @@ const testimonials = [
         text: "Le concept est génial. J'ai rencontré ma partenaire de tennis grâce à l'app en 2 heures. Efficacité redoutable.",
         name: "Lucas P.",
         role: "Membre Actif",
-        avatar: "https://i.pravatar.cc/150?u=1234566",
+        avatar: "https://i.pravatar.cc/150?img=11",
         rating: 5.0
     }
 ];
