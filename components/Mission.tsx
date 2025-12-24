@@ -66,7 +66,7 @@ export default function Mission() {
                                 Des rebelles de la connexion authentique. Ils ont une app pour contrôler leur temps d'écran, sont toujours partants pour une nouvelle expo, et fuient les "dates" scénarisés.
                                 Ils sont <span className="serif italic">imparfaits, curieux, et vivants</span>.
                             </p>
-                            <span className={styles.readTime}>4 MIN READ</span>
+                            <span className={styles.readTime}>12 SEC READ</span>
                         </motion.article>
                     </div>
 
