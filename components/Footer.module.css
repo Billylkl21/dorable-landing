@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-    padding: 4rem 2rem 2rem;
+    padding: 2rem 1rem 1rem;
     background: #fff;
     overflow: hidden;
     display: flex;
@@ -11,18 +11,18 @@
 
 .statementWrapper {
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.5rem;
     text-align: center;
 }
 
 .statement {
     font-family: var(--font-serif);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     line-height: 1.1;
     font-weight: 500;
     font-style: italic;
     color: #121212;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .statementHighlight {
