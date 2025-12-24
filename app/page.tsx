@@ -4,6 +4,7 @@ import Mission from '@/components/Mission';
 import Features from '@/components/Features';
 import Header from '@/components/Header';
 import LifestyleGrid from '@/components/LifestyleGrid';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <div id="lifestyle">
         <LifestyleGrid />
       </div>
+      <Testimonials />
 
       {/* Footer Placeholder */}
       <footer style={{
