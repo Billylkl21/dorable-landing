@@ -12,11 +12,11 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
+      <Testimonials />
       <Mission />
       <div id="lifestyle">
         <LifestyleGrid />
       </div>
-      <Testimonials />
 
       {/* Footer Placeholder */}
       <footer style={{

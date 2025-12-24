@@ -58,7 +58,7 @@ export default function Testimonials() {
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <span className={styles.badge}>Avis</span>
+                    <span className={styles.badge}>Ce qu'ils disent de nous</span>
                     <h2 className={styles.title}>Ils adorent l'expérience</h2>
                 </div>
 
