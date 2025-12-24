@@ -3,9 +3,8 @@
     width: 100%;
     min-height: 100vh;
     padding-top: 7rem;
-    /* Reduced further to 7rem */
-    padding-bottom: 2rem;
-    /* Reduced from 4rem */
+    padding-bottom: 1rem;
+    /* Minimal bottom padding */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -381,8 +380,8 @@
 }
 
 .downloadButtons {
-    margin-top: 1.5rem;
-    /* Reduced space */
+    margin-top: 0.5rem;
+    /* Aggressively reduced */
     display: flex;
     justify-content: center;
     gap: 1rem;
