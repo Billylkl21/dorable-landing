@@ -65,10 +65,12 @@
 .cityImage {
     transition: transform 0.6s ease;
     filter: grayscale(20%);
+    transform: scale(1.1);
+    /* Slight zoom to crop potential watermarks */
 }
 
 .cityCard:hover .cityImage {
-    transform: scale(1.05);
+    transform: scale(1.15);
     filter: grayscale(0%);
 }
 

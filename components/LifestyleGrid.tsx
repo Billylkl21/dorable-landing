@@ -4,58 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './LifestyleGrid.module.css';
 
-const items = [
-    {
-        id: 1,
-        type: 'image',
-        src: '/images/city_paris.png',
-        alt: 'Parisian Rooftop',
-        size: 'tall',
-        label: 'Rooftops'
-    },
-    {
-        id: 2,
-        type: 'text',
-        title: 'Paris est une fête',
-        subtitle: 'Et vous êtes invité.',
-        bg: 'var(--brand-pink)',
-        color: 'white',
-        size: 'square'
-    },
-    {
-        id: 3,
-        type: 'image',
-        src: '/images/city_rome.png',
-        alt: 'Terrace Culture',
-        size: 'wide',
-        label: 'Terrasses'
-    },
-    {
-        id: 4,
-        type: 'image',
-        src: '/images/mission_culture.png',
-        alt: 'Art & Gallery',
-        size: 'square',
-        label: 'Vernissages'
-    },
-    {
-        id: 5,
-        type: 'text',
-        title: 'Vivre',
-        subtitle: 'Sans filtre.',
-        bg: 'var(--brand-indigo)',
-        color: 'white',
-        size: 'tall'
-    },
-    {
-        id: 6,
-        type: 'image',
-        src: '/images/city_tokyo.png',
-        alt: 'Hidden Spots',
-        size: 'wide',
-        label: 'Secrets'
-    }
-];
+// Unused items array removed
 
 export default function LifestyleGrid() {
     return (
@@ -76,17 +25,23 @@ export default function LifestyleGrid() {
                 <div className={styles.carouselWrapper}>
                     <div className={styles.carouselTrack}>
                         {[
-                            { name: 'Paris', image: '/images/city_paris.png' },
-                            { name: 'New York', image: '/images/city_newyork.png' },
-                            { name: 'Rome', image: '/images/city_rome.png' },
-                            { name: 'Londres', image: '/images/city_london.png' },
-                            { name: 'Tokyo', image: '/images/city_tokyo.png' },
+                            { name: 'Paris', image: '/images/illu_paris.jpg' },
+                            { name: 'New York', image: '/images/illu_newyork.jpg' },
+                            { name: 'Pékin', image: '/images/illu_pekin.jpg' },
+                            { name: 'Londres', image: '/images/illu_cinema.jpg' },
+                            { name: 'Tokyo', image: '/images/illu_tokyo.jpg' },
+                            { name: 'Rome', image: '/images/illu_rome.jpg' },
+                            { name: 'Rio', image: '/images/illu_rio.jpg' },
+                            { name: 'Le Caire', image: '/images/illu_cairo.jpg' },
                             // Duplicates for infinity loop
-                            { name: 'Paris', image: '/images/city_paris.png' },
-                            { name: 'New York', image: '/images/city_newyork.png' },
-                            { name: 'Rome', image: '/images/city_rome.png' },
-                            { name: 'Londres', image: '/images/city_london.png' },
-                            { name: 'Tokyo', image: '/images/city_tokyo.png' }
+                            { name: 'Paris', image: '/images/illu_paris.jpg' },
+                            { name: 'New York', image: '/images/illu_newyork.jpg' },
+                            { name: 'Pékin', image: '/images/illu_pekin.jpg' },
+                            { name: 'Londres', image: '/images/illu_cinema.jpg' },
+                            { name: 'Tokyo', image: '/images/illu_tokyo.jpg' },
+                            { name: 'Rome', image: '/images/illu_rome.jpg' },
+                            { name: 'Rio', image: '/images/illu_rio.jpg' },
+                            { name: 'Le Caire', image: '/images/illu_cairo.jpg' }
                         ].map((city, index) => (
                             <div key={index} className={styles.cityCard}>
                                 <div className={styles.imageWrapper}>
