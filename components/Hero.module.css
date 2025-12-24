@@ -4,7 +4,8 @@
     min-height: 100vh;
     padding-top: 7rem;
     /* Reduced further to 7rem */
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+    /* Reduced from 4rem */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,8 +381,8 @@
 }
 
 .downloadButtons {
-    margin-top: 3rem;
-    /* More space */
+    margin-top: 1.5rem;
+    /* Reduced space */
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -439,8 +440,8 @@
 }
 
 .storeImageWrapper {
-    width: 320px;
-    /* Increased from 220px for better visibility */
+    width: 400px;
+    /* Increased significantly to 400px */
     height: auto;
     transition: transform 0.2s ease;
     transform: none !important;
