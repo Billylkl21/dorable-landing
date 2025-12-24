@@ -9,7 +9,7 @@ const testimonials = [
         id: 1,
         text: "Dorable rend les sorties tellement plus simples. Je ne me prends plus la tête pour organiser, je rejoins juste ce qui me plaît.",
         name: "Clara M.",
-        role: "Membre depuis Janvier",
+        role: "Membre depuis Décembre 2025",
         avatar: "https://i.pravatar.cc/150?img=5",
         rating: 5.0
     },
@@ -17,7 +17,7 @@ const testimonials = [
         id: 2,
         text: "J'adore la communauté. Ça fait du bien de savoir qu'on n'est pas seul à vouloir sortir spontanément à Paris.",
         name: "Thomas R.",
-        role: "Membre Fondateur",
+        role: "Membre Actif",
         avatar: "https://i.pravatar.cc/150?img=8",
         rating: 5.0
     },
@@ -25,7 +25,7 @@ const testimonials = [
         id: 3,
         text: "L'interface est super fluide et clean. Rien de compliqué, on va à l'essentiel : la rencontre.",
         name: "Sarah L.",
-        role: "Paris 11ème",
+        role: "Membre depuis Novembre 2025",
         avatar: "https://i.pravatar.cc/150?img=10",
         rating: 5.0
     },
@@ -33,7 +33,7 @@ const testimonials = [
         id: 4,
         text: "Franchement utile. Ça me permet de découvrir des expos que j'aurais ratées et de rencontrer des gens qui ont les mêmes goûts.",
         name: "Julie B.",
-        role: "Membre VIP",
+        role: "Membre depuis Décembre 2025",
         avatar: "https://i.pravatar.cc/150?img=16",
         rating: 5.0
     },
