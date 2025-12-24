@@ -83,6 +83,90 @@ export default function Hero() {
                     transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <div className={styles.phoneStage}>
+                        {/* Narrative Step 1: Context (Location) */}
+                        <motion.div
+                            className={styles.floatingCard}
+                            style={{ top: '15%', left: '-30%' }}
+                            initial={{ opacity: 0, x: 20, scale: 0.8 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                opacity: { delay: 0.5, duration: 0.5 },
+                                x: { delay: 0.5, duration: 0.5 },
+                                scale: { delay: 0.5, duration: 0.5, type: "spring" },
+                                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                            }}
+                        >
+                            <span className={styles.floatingIcon}>📍</span>
+                            <div className={styles.floatingMeta}>
+                                <span className={styles.floatingLabel}>1. Localisation</span>
+                                <span>Le Marais, Paris</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Narrative Step 2: Desire (Interest) */}
+                        <motion.div
+                            className={styles.floatingCard}
+                            style={{ top: '25%', right: '-25%' }}
+                            initial={{ opacity: 0, x: -20, scale: 0.8 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                opacity: { delay: 1.2, duration: 0.5 },
+                                x: { delay: 1.2, duration: 0.5 },
+                                scale: { delay: 1.2, duration: 0.5, type: "spring" },
+                                y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }
+                            }}
+                        >
+                            <span className={styles.floatingIcon}>🎨</span>
+                            <div className={styles.floatingMeta}>
+                                <span className={styles.floatingLabel}>2. Interest</span>
+                                <span>Expo Photo</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Narrative Step 3: Connection (Match) */}
+                        <motion.div
+                            className={styles.floatingCard}
+                            style={{ bottom: '20%', left: '-28%' }}
+                            initial={{ opacity: 0, x: 20, scale: 0.8 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                opacity: { delay: 1.9, duration: 0.5 },
+                                x: { delay: 1.9, duration: 0.5 },
+                                scale: { delay: 1.9, duration: 0.5, type: "spring" },
+                                y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.9 }
+                            }}
+                        >
+                            <span className={styles.floatingIcon}>👋</span>
+                            <div className={styles.floatingMeta}>
+                                <span className={styles.floatingLabel}>3. Nouvelle Connexion</span>
+                                <span>Marie adore aussi !</span>
+                            </div>
+                        </motion.div>
+
+                        {/* Narrative Step 4: Action (Invite) */}
+                        <motion.div
+                            className={styles.floatingCard}
+                            style={{ bottom: '25%', right: '-35%' }}
+                            initial={{ opacity: 0, x: -20, scale: 0.8 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                opacity: { delay: 2.6, duration: 0.5 },
+                                x: { delay: 2.6, duration: 0.5 },
+                                scale: { delay: 2.6, duration: 0.5, type: "spring" },
+                                y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2.6 }
+                            }}
+                        >
+                            <span className={styles.floatingIcon}>🥂</span>
+                            <div className={styles.floatingMeta}>
+                                <span className={styles.floatingLabel}>4. Rencontre</span>
+                                <span>On y va ensemble ?</span>
+                            </div>
+                        </motion.div>
+
                         <div className={styles.phoneWrapper}>
                             <IPhoneMockup videoSrc="/videos/app-demo.mp4" />
                         </div>

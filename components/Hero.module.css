@@ -272,3 +272,61 @@
         white-space: nowrap;
     }
 }
+
+/* Floating Glass UI Elements */
+.floatingCard {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    padding: 0.7rem 1rem;
+    box-shadow:
+        0 10px 40px -10px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    z-index: 20;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transform-style: preserve-3d;
+    pointer-events: none;
+    min-width: max-content;
+}
+
+.floatingIcon {
+    width: 2.2rem;
+    height: 2.2rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.floatingMeta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.floatingLabel {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    .floatingCard {
+        display: none;
+        /* Hide on mobile to keep it clean */
+    }
+}
