@@ -63,7 +63,7 @@ export default function Mission() {
                         >
                             <h4 className={styles.smallHeadline}>À quoi les reconnaît-on ?</h4>
                             <p className={styles.textSmall}>
-                                Des rebelles de la connexion authentique. Ils ont une app pour contrôler leur temps d'écran, sont toujours partants pour une nouvelle expo, et fuient les "dates" scénarisés.
+                                Des rebelles de la connexion authentique. Ils ont une app pour limiter leur temps d'écran, sont toujours partants pour une nouvelle expo, et fuient les "dates" scénarisés.
                                 Ils sont <span className="serif italic">imparfaits, curieux, et vivants</span>.
                             </p>
                             <span className={styles.readTime}>12 SEC READ</span>
