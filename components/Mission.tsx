@@ -94,7 +94,7 @@ export default function Mission() {
                             <h3 className={styles.headline}>Qui sont les Adorables ?</h3>
                             <div className={styles.content}>
                                 <span className={styles.dropCap}>C</span>'est une insurrection douce contre la tyrannie du prévu.
-                                Les 20-35 ans refusent désormais d'être spectateurs de leur propre jeunesse derrière un écran.
+                                Une génération qui refuse d'être spectatrice de sa propre jeunesse derrière un écran.
                                 Ils boycottent la perfection digitale pour le grain du réel, préférant une galère mémorable à une soirée "parfaite" mais vide.
                                 Ce ne sont pas des utilisateurs, ce sont les nouveaux dissidents du lien social qui réclament le droit à l'imprévu.
                                 Leur QG ? La rue. Leur arme ? L'audace.
