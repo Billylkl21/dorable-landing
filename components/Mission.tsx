@@ -93,12 +93,12 @@ export default function Mission() {
                         <div className={styles.mainArticleContent}>
                             <h3 className={styles.headline}>Qui sont les Adorables ?</h3>
                             <div className={styles.content}>
-                                <span className={styles.dropCap}>C</span>'est l'avant-garde de la spontanéité.
-                                Ceux qui ont compris que la vie ne se passe pas sur un écran Retina.
-                                Ils ont déserté les applis de rencontres glauques pour réinvestir la rue, les bars, la vraie vie.
-                                Ils ne planifient pas, ils foncent. Ils ne "chat" pas, ils parlent.
-                                C'est un mouvement à ciel ouvert pour ceux qui refusent d'être spectateurs de leur propre existence.
-                                Provocateurs ? Peut-être. Vivants ? Assurément.
+                                <span className={styles.dropCap}>C</span>'est une insurrection douce contre la tyrannie du prévu.
+                                Dans un monde où chaque seconde est optimisée, ils commettent l'acte le plus radical qui soit : se laisser surprendre.
+                                Ils ont troqué la sécurité des algorithmes pour le vertige du réel.
+                                Ce ne sont pas des utilisateurs, ce sont des dissidents du numérique qui réclament le droit à l'imprévu.
+                                Leur QG ? La ville. Leur arme ? L'audace.
+                                Ils ne cherchent pas à matcher, ils cherchent à vivre.
                             </div>
                         </div>
                     </motion.div>
