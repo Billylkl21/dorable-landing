@@ -14,8 +14,8 @@ export default function Footer() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    Votre écran ne vous rendra pas heureux.<br />
-                    <span className={styles.statementHighlight}>Sortez.</span>
+                    La vie est trop belle<br />
+                    <span className={styles.statementHighlight}>pour la vivre derrière un écran.</span>
                 </motion.p>
             </div>
 
