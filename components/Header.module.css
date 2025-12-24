@@ -49,15 +49,29 @@
 @media (max-width: 768px) {
     .header {
         top: 1rem;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
+        width: 90%;
+        max-width: 400px;
     }
 
     .nav {
-        gap: 1.5rem;
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
     }
 
     .link {
         font-size: 0.65rem;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav {
+        gap: 0.5rem;
+    }
+
+    .link {
+        font-size: 0.6rem;
     }
 }

@@ -130,11 +130,18 @@
 
 @media (max-width: 1024px) {
     .heroSection {
-        padding-top: 10rem;
+        padding-top: 6rem;
+        padding-bottom: 2rem;
     }
 
     .visualContent {
-        margin-top: 5rem;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding-top: 5.5rem;
     }
 }
 
