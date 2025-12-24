@@ -25,23 +25,17 @@ export default function LifestyleGrid() {
                 <div className={styles.carouselWrapper}>
                     <div className={styles.carouselTrack}>
                         {[
-                            { name: 'Paris', image: '/images/illu_paris.jpg' },
-                            { name: 'New York', image: '/images/illu_newyork.jpg' },
-                            { name: 'Pékin', image: '/images/illu_pekin.jpg' },
-                            { name: 'Londres', image: '/images/illu_cinema.jpg' },
-                            { name: 'Tokyo', image: '/images/illu_tokyo.jpg' },
-                            { name: 'Rome', image: '/images/illu_rome.jpg' },
-                            { name: 'Rio', image: '/images/illu_rio.jpg' },
-                            { name: 'Le Caire', image: '/images/illu_cairo.jpg' },
+                            { name: 'Paris', image: '/images/city_paris.png' },
+                            { name: 'New York', image: '/images/city_newyork.png' },
+                            { name: 'Rome', image: '/images/city_rome.png' },
+                            { name: 'Londres', image: '/images/city_london.png' },
+                            { name: 'Tokyo', image: '/images/city_tokyo.png' },
                             // Duplicates for infinity loop
-                            { name: 'Paris', image: '/images/illu_paris.jpg' },
-                            { name: 'New York', image: '/images/illu_newyork.jpg' },
-                            { name: 'Pékin', image: '/images/illu_pekin.jpg' },
-                            { name: 'Londres', image: '/images/illu_cinema.jpg' },
-                            { name: 'Tokyo', image: '/images/illu_tokyo.jpg' },
-                            { name: 'Rome', image: '/images/illu_rome.jpg' },
-                            { name: 'Rio', image: '/images/illu_rio.jpg' },
-                            { name: 'Le Caire', image: '/images/illu_cairo.jpg' }
+                            { name: 'Paris', image: '/images/city_paris.png' },
+                            { name: 'New York', image: '/images/city_newyork.png' },
+                            { name: 'Rome', image: '/images/city_rome.png' },
+                            { name: 'Londres', image: '/images/city_london.png' },
+                            { name: 'Tokyo', image: '/images/city_tokyo.png' }
                         ].map((city, index) => (
                             <div key={index} className={styles.cityCard}>
                                 <div className={styles.imageWrapper}>
