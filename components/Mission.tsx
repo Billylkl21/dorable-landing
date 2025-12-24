@@ -93,11 +93,11 @@ export default function Mission() {
                         <div className={styles.mainArticleContent}>
                             <h3 className={styles.headline}>Qui sont les Adorables ?</h3>
                             <div className={styles.content}>
-                                <span className={styles.dropCap}>C</span>'est une élite de la spontanéité.
+                                <span className={styles.dropCap}>C</span>'est l'avant-garde de la spontanéité.
                                 Ceux qui ont compris que la vie ne se passe pas sur un écran Retina.
                                 Ils ont déserté les applis de rencontres glauques pour réinvestir la rue, les bars, la vraie vie.
                                 Ils ne planifient pas, ils foncent. Ils ne "chat" pas, ils parlent.
-                                C'est un club privé à ciel ouvert pour ceux qui refusent d'être spectateurs de leur propre existence.
+                                C'est un mouvement à ciel ouvert pour ceux qui refusent d'être spectateurs de leur propre existence.
                                 Provocateurs ? Peut-être. Vivants ? Assurément.
                             </div>
                         </div>
