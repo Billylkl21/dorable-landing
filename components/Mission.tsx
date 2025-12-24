@@ -49,8 +49,8 @@ export default function Mission() {
                         >
                             <h4 className={styles.smallHeadline}>Pourquoi ils envahissent nos villes ?</h4>
                             <p className={styles.textSmall}>
-                                C'est une OPA hostile sur la morosité. Ils hackent le code social qui nous interdit de nous parler.
-                                Ils transforment chaque coin de rue en opportunité. Une vague d'optimisme radical qui ne demande <span className="serif italic">aucune permission</span>.
+                                Pour sauver nos bistrots, nos théâtres, nos salles d'escalade. Ils transforment leurs passions en prétexte.
+                                Plutôt que de liker, ils sortent. Ils redonnent du souffle à l'économie locale et de l'âme à la <span className="serif italic">culture de quartier</span>.
                             </p>
                             <span className={styles.readTime}>2 MIN READ</span>
                         </motion.article>
