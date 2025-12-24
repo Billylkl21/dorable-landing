@@ -9,6 +9,10 @@ export default function Hero() {
     return (
         <section id="join" className={styles.heroSection}>
             <div className={styles.container}>
+                <div className={styles.liveIndicator}>
+                    <span className={styles.liveDot}></span>
+                    <span>42 sorties spontanées en cours à Paris ce soir</span>
+                </div>
                 <div className={styles.textContent}>
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
