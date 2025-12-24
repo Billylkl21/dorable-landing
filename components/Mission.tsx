@@ -129,7 +129,7 @@ export default function Mission() {
                                 Rejoindre Dorable est un acte de résistance.
                                 Une communauté pour ceux qui savent encore <span className="serif italic">provoquer le destin</span>.
                             </p>
-                            <span className={styles.readTime}>5 MIN READ</span>
+                            <span className={styles.readTime}>5 SEC READ</span>
                         </motion.article>
                     </div>
                 </div>
