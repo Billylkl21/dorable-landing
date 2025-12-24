@@ -20,7 +20,7 @@ export default function Hero() {
                     </motion.div>
 
                     <h1 className="title-xl reveal delay-1">
-                        Vos Envies. <br className={styles.desktopHidden} />
+                        Vos Envies. <br />
                         <span className="serif" style={{ fontStyle: 'italic', fontWeight: 400 }}>En Bonne Compagnie.</span>
                     </h1>
 
