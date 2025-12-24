@@ -12,16 +12,20 @@
 .paperContainer {
     width: 100%;
     max-width: var(--container-max);
-    background: #fdfdfc;
-    /* Accurate newsprint white */
+    background-color: #fdfaf6;
+    /* Warm aged paper tone */
+    background-image: linear-gradient(to bottom right, #fdfaf6, #f7f1e3 70%, #f0ead6);
+    /* Subtle parchment gradient */
     color: #1a1a1a;
     padding: 3rem 4rem;
     box-shadow:
-        0 1px 1px rgba(0, 0, 0, 0.05),
-        0 10px 30px rgba(0, 0, 0, 0.08),
-        0 30px 60px rgba(0, 0, 0, 0.12);
+        0 2px 2px rgba(0, 0, 0, 0.05),
+        0 15px 40px rgba(0, 0, 0, 0.08),
+        0 50px 80px rgba(0, 0, 0, 0.12),
+        inset 0 0 80px rgba(160, 140, 100, 0.05);
+    /* Vignette effect */
     /* Deep editorial shadow */
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     position: relative;
     margin: 0 auto;
 }
