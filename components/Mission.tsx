@@ -47,10 +47,10 @@ export default function Mission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <h4 className={styles.smallHeadline}>Qui sont les Adorables ?</h4>
+                            <h4 className={styles.smallHeadline}>Redonner vie à la ville</h4>
                             <p className={styles.textSmall}>
-                                Une nouvelle bohème urbaine. Ils fuient les plans surchargés pour l'adrénaline de l'instant.
-                                Ce sont ceux qui préfèrent vivre des expériences réelles plutôt que de scroller sans fin.
+                                Nos métropoles ne sont pas des musées, mais des organismes vivants.
+                                Finie l'ère de la solitude au milieu de la foule : Dorable réactive les <span className="serif italic">connexions spontanées</span>.
                             </p>
                             <span className={styles.readTime}>2 MIN READ</span>
                         </motion.article>
@@ -91,13 +91,13 @@ export default function Mission() {
 
                         {/* Main Article Text */}
                         <div className={styles.mainArticleContent}>
-                            <h3 className={styles.headline}>Redonner vie à la ville</h3>
+                            <h3 className={styles.headline}>Qui sont les Adorables ?</h3>
                             <div className={styles.content}>
                                 <p className={styles.text}>
-                                    <span className={styles.dropCap}>V</span>otre ville n'est pas un musée à ciel ouvert. C'est un organisme vivant, électrique, chaotique.
-                                    Pourtant, au cœur de cette densité, la solitude n'a jamais été aussi bruyante.
-                                    Nous sommes <span className="serif italic">hyper-connectés</span>, mais déconnectés de l'essentiel : l'Autre.
-                                    Il est temps de briser la glace.
+                                    <span className={styles.dropCap}>C</span>e ne sont pas juste des utilisateurs. C'est un mouvement silencieux qui reprend ses droits sur la ville.
+                                    Fatigués du "swiping" vide et des soirées planifiées trois semaines à l'avance, les Adorables sont des <span className="serif italic">rebelles de l'instant</span>.
+                                    Ils ont compris qu'une rencontre ne se prévoit pas, elle se vit.
+                                    Ils éteignent leurs écrans pour allumer la nuit. Ils sont l'antidote à la solitude moderne. Et vous, en êtes-vous ?
                                 </p>
                             </div>
                         </div>
