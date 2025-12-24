@@ -1,3 +1,4 @@
+/* Glassmorphism Header */
 .header {
     position: fixed;
     top: 2rem;
@@ -6,28 +7,33 @@
     width: auto;
     padding: 0.6rem 2.5rem;
     z-index: 1000;
-    transition: padding 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
-    /* Optimized specific transitions */
+    transition: all 0.4s ease;
 
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.65);
+    /* More transparent for glass effect */
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Stronger glass edge */
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .headerScrolled {
     top: 1.5rem;
-    background: white;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly more opaque when scrolled */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
 }
 
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Changed from center */
     width: 100%;
     max-width: 800px;
     gap: 2rem;
@@ -43,13 +49,11 @@
     display: flex;
     align-items: center;
     margin-right: auto;
-    /* Push links to right if we want, or keep centered with gap */
 }
 
 .logo {
     object-fit: contain;
     mix-blend-mode: multiply;
-    /* Ensures seamless blend */
     height: 28px;
     width: auto;
 }
@@ -71,9 +75,7 @@
 }
 
 .cta {
-    /* background: linear-gradient(135deg, var(--brand-pink), var(--brand-indigo)); REMOVED - Too aggressive */
     background: #121212;
-    /* Matching the logo / Premium Black */
     color: white;
     text-decoration: none;
     padding: 0.7rem 1.4rem;
@@ -84,7 +86,6 @@
     letter-spacing: 0.1em;
     transition: var(--transition-smooth);
     box-shadow: 0 4px 20px rgba(232, 121, 249, 0.25);
-    /* Pastel pink/violet glow */
     white-space: nowrap;
 }
 
@@ -96,67 +97,34 @@
 @media (max-width: 768px) {
     .header {
         top: 1rem;
-        padding: 0.5rem 0.8rem;
-        /* Reduced padding to give more space for content */
-        width: 95%;
-        max-width: 400px;
-        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        width: 92%;
+        max-width: none;
+        /* Let it stretch a bit more naturally */
     }
 
     .nav {
-        gap: 1rem;
-        justify-content: space-between;
-        width: 100%;
-        overflow-x: auto;
-        /* Allow scroll if it gets too tight */
-        -webkit-overflow-scrolling: touch;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-
-        /* Hide scrollbar */
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* IE 10+ */
+        gap: 0;
+        overflow: visible;
+        /* No need to scroll if we hide links */
     }
 
     .logo {
-        height: 20px;
-        /* Smaller on mobile */
-        margin-right: 0.5rem;
+        height: 24px;
+        margin-right: 0;
     }
 
     .linksWrapper {
-        gap: 1rem;
-    }
-
-    .nav::-webkit-scrollbar {
-        display: none;
-        /* Chrome/Safari */
+        gap: 0;
     }
 
     .link {
-        font-size: 0.65rem;
-        letter-spacing: 0.05em;
-        /* Slightly tighter tracking */
-        white-space: nowrap;
-        /* CRITICAL: Prevents text from breaking into two lines */
-        flex-shrink: 0;
-        /* Prevents text from being squished */
+        display: none;
+        /* HIDE text links on mobile */
     }
 
     .cta {
-        padding: 0.5rem 0.95rem;
-        font-size: 0.65rem;
-    }
-}
-
-@media (max-width: 380px) {
-    .nav {
-        gap: 0.5rem;
-    }
-
-    .link {
-        font-size: 0.6rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
     }
 }
