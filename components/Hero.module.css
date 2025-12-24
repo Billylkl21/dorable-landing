@@ -430,21 +430,23 @@
 
 .storeName {
     font-size: 0.9rem;
+}
 
-    .storeImageWrapper {
-        width: 250px;
-        height: auto;
-        transition: transform 0.2s ease;
-    }
+.storeImageWrapper {
+    width: 250px;
+    height: auto;
+    transition: transform 0.2s ease;
+    transform: none !important;
+    /* Force flat rendering */
+}
 
-    .storeImageWrapper:hover {
-        transform: translateY(-2px);
-        cursor: pointer;
-    }
+.storeImageWrapper:hover {
+    transform: translateY(-2px) !important;
+    cursor: pointer;
+}
 
-    .storeImage {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
+.storeImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
