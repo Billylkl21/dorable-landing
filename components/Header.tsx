@@ -27,8 +27,8 @@ export default function Header() {
                     <Image
                         src="/images/logo_final.png"
                         alt="Dorable"
-                        width={120}
-                        height={35}
+                        width={150}
+                        height={45}
                         priority
                         className={styles.logo}
                     />

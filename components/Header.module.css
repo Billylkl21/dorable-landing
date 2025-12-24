@@ -55,7 +55,8 @@
 .logo {
     object-fit: contain;
     mix-blend-mode: multiply;
-    height: 28px;
+    height: 42px;
+    /* Significantly bigger */
     width: auto;
 }
 
@@ -111,7 +112,8 @@
     }
 
     .logo {
-        height: 24px;
+        height: 32px;
+        /* Bigger on mobile too */
         margin-right: 0;
     }
 
