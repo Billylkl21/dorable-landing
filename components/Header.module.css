@@ -54,7 +54,7 @@
 
 .logo {
     object-fit: contain;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; REMOVED */
     height: 42px;
     /* Significantly bigger */
     width: auto;
