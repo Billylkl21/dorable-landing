@@ -61,10 +61,10 @@ export default function Mission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7 }}
                         >
-                            <h4 className={styles.smallHeadline}>Métropoles : Le Réveil</h4>
+                            <h4 className={styles.smallHeadline}>Qui sont les Adorables ?</h4>
                             <p className={styles.textSmall}>
-                                Nos villes s'éteignent-elles ? Non, elles changent.
-                                Découvrez les nouveaux <span className="serif italic">circuits courts</span> de la rencontre urbaine.
+                                Une nouvelle bohème urbaine. Ils fuient les plans surchargés pour l'adrénaline de l'instant.
+                                Ce sont ceux qui disent "oui" à une expo de dernière minute, ceux pour qui la ville est un <span className="serif italic">terrain de jeu infini</span>.
                             </p>
                             <span className={styles.readTime}>4 MIN READ</span>
                         </motion.article>
