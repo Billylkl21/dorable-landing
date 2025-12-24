@@ -47,10 +47,10 @@ export default function Mission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <h4 className={styles.smallHeadline}>L'Inattendu comme Luxe</h4>
+                            <h4 className={styles.smallHeadline}>Qui sont les Adorables ?</h4>
                             <p className={styles.textSmall}>
-                                Dans un monde scripté, la véritable élégance est de laisser faire le hasard.
-                                Dorable est une <span className="serif italic">boussole vers l'imprévu</span>.
+                                Une nouvelle bohème urbaine. Ils fuient les plans surchargés pour l'adrénaline de l'instant.
+                                Ce sont ceux qui préfèrent vivre des expériences réelles plutôt que de scroller sans fin.
                             </p>
                             <span className={styles.readTime}>2 MIN READ</span>
                         </motion.article>
@@ -61,10 +61,10 @@ export default function Mission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7 }}
                         >
-                            <h4 className={styles.smallHeadline}>Qui sont les Adorables ?</h4>
+                            <h4 className={styles.smallHeadline}>À quoi les reconnaît-on ?</h4>
                             <p className={styles.textSmall}>
-                                Une nouvelle bohème urbaine. Ils fuient les plans surchargés pour l'adrénaline de l'instant.
-                                Ce sont ceux qui disent "oui" à une expo de dernière minute, ceux pour qui la ville est un <span className="serif italic">terrain de jeu infini</span>.
+                                Des rebelles de la connexion authentique. Ils ont troqué les écrans pour les regards, et les likes pour les <span className="serif italic">vrais souvenirs</span>.
+                                Pour eux, la ville est un terrain de jeu à reconquérir ensemble.
                             </p>
                             <span className={styles.readTime}>4 MIN READ</span>
                         </motion.article>
