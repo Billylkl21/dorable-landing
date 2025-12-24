@@ -10,8 +10,8 @@ export default function Home() {
     <main className={styles.main}>
       <Header />
       <Hero />
-      <Mission />
       <Features />
+      <Mission />
       <div id="lifestyle">
         <LifestyleGrid />
       </div>
