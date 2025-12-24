@@ -58,25 +58,17 @@ export default function Testimonials() {
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <span className={styles.badge}>Social Proof</span>
+                    <span className={styles.badge}>Avis</span>
                     <h2 className={styles.title}>Ils adorent l'expérience</h2>
                 </div>
 
-                <div className={styles.grid}>
-                    {/* First Row (3 cards) */}
-                    <div className={styles.row1}>
-                        {testimonials.slice(0, 3).map((t, i) => (
-                            <motion.div
-                                key={t.id}
-                                className={styles.card}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.5 }}
-                            >
+                <div className={styles.marqueeContainer}>
+                    <div className={styles.marqueeTrack}>
+                        {[...testimonials, ...testimonials].map((t, i) => (
+                            <div key={`${t.id}-${i}`} className={styles.card}>
                                 <p className={styles.text}>"{t.text}"</p>
                                 <div className={styles.rating}>
-                                    {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+                                    {[...Array(5)].map((_, j) => <StarIcon key={j} />)}
                                     <span style={{ fontSize: '0.8rem', marginLeft: '0.5rem', opacity: 0.6, fontWeight: 500 }}>{t.rating}</span>
                                 </div>
                                 <div className={styles.footer}>
@@ -88,36 +80,7 @@ export default function Testimonials() {
                                         <span className={styles.role}>{t.role}</span>
                                     </div>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Second Row (2 cards) */}
-                    <div className={styles.row2}>
-                        {testimonials.slice(3, 5).map((t, i) => (
-                            <motion.div
-                                key={t.id}
-                                className={styles.card}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: (i + 3) * 0.1, duration: 0.5 }}
-                            >
-                                <p className={styles.text}>"{t.text}"</p>
-                                <div className={styles.rating}>
-                                    {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
-                                    <span style={{ fontSize: '0.8rem', marginLeft: '0.5rem', opacity: 0.6, fontWeight: 500 }}>{t.rating}</span>
-                                </div>
-                                <div className={styles.footer}>
-                                    <div className={styles.avatar}>
-                                        <Image src={t.avatar} alt={t.name} width={40} height={40} />
-                                    </div>
-                                    <div className={styles.meta}>
-                                        <span className={styles.name}>{t.name}</span>
-                                        <span className={styles.role}>{t.role}</span>
-                                    </div>
-                                </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
