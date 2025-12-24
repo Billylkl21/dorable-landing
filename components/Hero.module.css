@@ -439,7 +439,8 @@
 }
 
 .storeImageWrapper {
-    width: 220px;
+    width: 320px;
+    /* Increased from 220px for better visibility */
     height: auto;
     transition: transform 0.2s ease;
     transform: none !important;
