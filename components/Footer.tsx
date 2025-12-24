@@ -6,44 +6,38 @@ import styles from './Footer.module.css';
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            {/* The Big Statement */}
-            <div className={styles.statement}>
-                <motion.h2
-                    className={styles.provocation}
+            <div className={styles.statementWrapper}>
+                <motion.p
+                    className={styles.statement}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
                 >
-                    Votre écran ne vous rendra pas heureux. <br />
-                    <span style={{ fontStyle: 'italic', color: '#db2777' }}>Sortez.</span>
-                </motion.h2>
-
-                <div className={styles.ctaWrapper}>
-                    <motion.a
-                        href="#join"
-                        className="button-premium"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        style={{ background: '#000', color: '#fff' }} // Black contrast
-                    >
-                        Télécharger Dorable
-                    </motion.a>
-                </div>
+                    Votre écran ne vous rendra pas heureux.<br />
+                    <span className={styles.statementHighlight}>Sortez.</span>
+                </motion.p>
             </div>
 
-            {/* Massive Brand Watermark */}
-            <h1 className={styles.bigBrand}>DORABLE</h1>
+            <div className={styles.bigTitleWrapper}>
+                <motion.h1
+                    className={styles.bigTitle}
+                    initial={{ y: "100%" }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    DORABLE
+                </motion.h1>
+            </div>
 
-            {/* Legal Footer */}
-            <div className={styles.legalRow}>
-                <span>&copy; {new Date().getFullYear()} Dorable Paris.</span>
-
+            <div className={styles.footerBottom}>
                 <div className={styles.links}>
+                    <a href="/legal" className={styles.link}>Mentions Légales</a>
                     <a href="/privacy" className={styles.link}>Confidentialité</a>
                     <a href="/terms" className={styles.link}>CGU</a>
-                    <a href="mailto:hello@dorable.app" className={styles.link}>Contact</a>
                 </div>
+                <p className={styles.copyright}>© 2025 Dorable. Paris.</p>
             </div>
         </footer>
     );
