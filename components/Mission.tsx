@@ -94,10 +94,11 @@ export default function Mission() {
                             <h3 className={styles.headline}>Qui sont les Adorables ?</h3>
                             <div className={styles.content}>
                                 <p className={styles.text}>
-                                    <span className={styles.dropCap}>C</span>e ne sont pas juste des utilisateurs. C'est un mouvement silencieux qui reprend ses droits sur la ville.
-                                    Fatigués du "swiping" vide et des soirées planifiées trois semaines à l'avance, les Adorables sont des <span className="serif italic">rebelles de l'instant</span>.
-                                    Ils ont compris qu'une rencontre ne se prévoit pas, elle se vit.
-                                    Ils éteignent leurs écrans pour allumer la nuit. Ils sont l'antidote à la solitude moderne. Et vous, en êtes-vous ?
+                                    <span className={styles.dropCap}>L</span>es Adorables sont le pouls oublié de nos villes.
+                                    Dans une époque qui filtre tout, ils choisissent l'audace du réel.
+                                    Ce sont ceux qui préfèrent le frisson d'un regard échangé à la sécurité d'un écran, le chaos joyeux d'une rencontre improvisée aux agendas surchargés.
+                                    Ils ne consomment pas la ville, ils l'habitent. Ils ne cherchent pas à plaire, ils cherchent à vibrer.
+                                    Être Adorable, c'est une résistance poétique contre la solitude moderne. C'est se promettre de ne plus jamais attendre pour vivre.
                                 </p>
                             </div>
                         </div>
