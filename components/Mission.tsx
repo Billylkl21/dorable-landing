@@ -26,7 +26,7 @@ export default function Mission() {
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                     >
-                        LE MANIFESTE
+                        LES ADORABLES
                     </motion.h2>
                     <motion.div
                         className={styles.dividerDouble}
