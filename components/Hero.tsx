@@ -16,7 +16,7 @@ export default function Hero() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className={styles.badge}>
-                            LE SOCIAL CLUB NOUVELLE GÉNÉRATION
+                            LE PREMIER CLUB DE SORTIES SPONTANÉES
                         </span>
                     </motion.div>
 
