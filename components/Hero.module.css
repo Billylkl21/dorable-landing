@@ -375,3 +375,57 @@
         display: none;
     }
 }
+
+.downloadButtons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 5;
+    flex-wrap: wrap;
+}
+
+.storeButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #121212;
+    /* Black */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.storeButton:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.storeIcon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.storeText {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.storeLabel {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.storeName {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
