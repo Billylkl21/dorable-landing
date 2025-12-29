@@ -1,9 +1,9 @@
 export default function PrivacyPolicy() {
     return (
-        <main style={{ padding: '4rem 2rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: '#333', lineHeight: '1.6' }}>
+        <main style={{ padding: '12rem 2rem 4rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: '#333', lineHeight: '1.6' }}>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', marginBottom: '2rem' }}>Politique de Confidentialité</h1>
 
-            <p className="mb-4">Dernière mise à jour : 24 Décembre 2024</p>
+            <p className="mb-4">Dernière mise à jour : 29 Décembre 2025</p>
 
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">1. Introduction</h2>

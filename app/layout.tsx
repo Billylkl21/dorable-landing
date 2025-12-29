@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import CookieConsent from '@/components/CookieConsent';
 import { outfit, playfair } from './fonts';
 
 export const metadata: Metadata = {
@@ -20,6 +22,8 @@ export default function RootLayout({
         <SmoothScroll>
           <Header />
           {children}
+          <Footer />
+          <CookieConsent />
         </SmoothScroll>
       </body>
     </html>
