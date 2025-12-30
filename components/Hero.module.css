@@ -74,8 +74,7 @@
 
 .badge {
     display: inline-block;
-    padding: 0.8rem 2.2rem;
-    /* Increased breathing room for text clarity */
+    padding: 0.7rem 1.8rem;
 
     /* High-End Iridescent Glass Material */
     background: linear-gradient(135deg,
@@ -91,8 +90,7 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    color: #000;
-    /* Pure black for maximum precision */
+    color: #121212;
     margin-bottom: 2.5rem;
     position: relative;
     z-index: 10;
@@ -101,15 +99,23 @@
     /* Advanced Lighting Simulation (Specular & Scattering) */
     box-shadow:
         0 20px 40px -15px rgba(0, 0, 0, 0.12),
-        inset 0 0 12px rgba(255, 255, 255, 0.35),
-        /* Tightened scattering on edges */
-        inset 0 1px 1px rgba(255, 255, 255, 1),
-        /* Crisp specular edge */
-        inset 0 -1.5px 2px rgba(0, 0, 0, 0.05),
-        0 0 25px -10px rgba(255, 255, 255, 0.4);
+        inset 0 0 20px rgba(255, 255, 255, 0.3),
+        /* Light Scattering */
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        /* Specular top edge */
+        inset 0 -1px 2px rgba(0, 0, 0, 0.05),
+        /* Bottom depth */
+        0 0 25px -5px rgba(255, 255, 255, 0.4);
+    /* Outer Luminous Aura */
 
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     animation: iridescentShift 8s infinite linear;
+}
+
+.badgeText {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
 }
 
 @keyframes iridescentShift {
@@ -144,6 +150,8 @@
     transform: rotate(35deg);
     animation: lightSweep 6s infinite ease-in-out;
     pointer-events: none;
+    z-index: 1;
+    /* Below text */
 }
 
 @keyframes lightSweep {
@@ -200,6 +208,7 @@
     mask-composite: exclude;
     pointer-events: none;
     z-index: 2;
+    /* Border on top of background but below text */
 }
 
 @keyframes rotateLaser {

@@ -25,7 +25,7 @@ export default function Hero() {
                         style={{ perspective: 1000 }}
                     >
                         <span className={styles.badge}>
-                            The real-world social network is here.
+                            <span className={styles.badgeText}>The real-world social network is here.</span>
                         </span>
                     </motion.div>
 
