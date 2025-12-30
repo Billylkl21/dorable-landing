@@ -134,12 +134,12 @@
     height: 300%;
     background: linear-gradient(to right,
             transparent 0%,
-            rgba(255, 255, 255, 0) 45%,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(255, 255, 255, 0) 55%,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 70%,
             transparent 100%);
     transform: rotate(35deg);
-    animation: lightSweep 4s infinite cubic-bezier(0.23, 1, 0.32, 1);
+    animation: lightSweep 15s infinite ease-in-out;
     pointer-events: none;
 }
 
