@@ -48,7 +48,16 @@ export default function Terms() {
             </section>
 
             <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">5. Limitation de responsabilité</h2>
+                <h2 className="text-xl font-bold mb-2 mt-6">5. Géolocalisation</h2>
+                <p>
+                    Le service Dorable repose sur la mise en relation d'utilisateurs à proximité.
+                    L'utilisation de l'application nécessite l'activation de la géolocalisation pour vous suggérer des activités pertinentes autour de vous.
+                    Vous pouvez à tout moment désactiver ou modifier les autorisations de géolocalisation dans les réglages de votre appareil, ce qui pourrait toutefois limiter l'accès à certaines fonctionnalités de l'application.
+                </p>
+            </section>
+
+            <section className="mb-8">
+                <h2 className="text-xl font-bold mb-2 mt-6">6. Limitation de responsabilité</h2>
                 <p>
                     Dorable agit en tant qu'intermédiaire technique. Nous ne sommes pas responsables des actions des utilisateurs lors des rencontres réelles.
                     Nous vous encourageons à faire preuve de prudence et de bon sens lors de vos rencontres.
@@ -56,7 +65,7 @@ export default function Terms() {
             </section>
 
             <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">6. Contact</h2>
+                <h2 className="text-xl font-bold mb-2 mt-6">7. Contact</h2>
                 <p>
                     Pour toute question concernant ces conditions, contactez-nous à : <strong>contact@dorable.app</strong>
                 </p>
