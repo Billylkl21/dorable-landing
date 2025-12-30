@@ -37,19 +37,14 @@ html {
   scroll-padding-top: 100px;
 }
 
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
-  -webkit-overflow-scrolling: touch;
-}
-
 body {
   background-color: var(--bg-primary);
   color: var(--text-main);
   font-family: var(--font-sans);
   line-height: 1.5;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Studio Grain Effect */

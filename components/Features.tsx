@@ -1,10 +1,9 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useMotionValueEvent, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Features.module.css';
-import IPhoneMockup from './IPhoneMockup';
 
 const featureData = [
     {
@@ -30,34 +29,84 @@ const featureData = [
     }
 ];
 
+function FeatureStep({ feature, index, activeStep }: { feature: typeof featureData[0], index: number, activeStep: number }) {
+    const stepRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: stepRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0.02, 0.1, 0.1, 0.02]);
+
+    return (
+        <div
+            ref={stepRef}
+            key={feature.id}
+            data-feature-step
+            className={`${styles.step} ${activeStep === index ? styles.stepActive : ''}`}
+        >
+            {/* Mobile Visual */}
+            <div className={styles.mobileVisual}>
+                <div className={`${styles.mockupContainer} glass-strong`}>
+                    <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        width={320}
+                        height={640}
+                        style={{ width: '100%', height: 'auto' }}
+                    />
+                </div>
+            </div>
+
+            <motion.div
+                className={styles.number}
+                style={{ y, opacity }}
+            >
+                0{feature.id}
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+            >
+                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <p className={styles.featureText}>{feature.text}</p>
+            </motion.div>
+        </div>
+    );
+}
+
 export default function Features() {
     const [activeStep, setActiveStep] = useState(0);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            const steps = document.querySelectorAll('[data-feature-step]');
+            if (!containerRef.current) return;
+            const steps = containerRef.current.querySelectorAll('[data-feature-step]');
             const viewportHeight = window.innerHeight;
             const centerPoint = viewportHeight / 2;
 
-            let foundActive = -1;
-
+            let currentStep = 0;
             steps.forEach((step, index) => {
                 const rect = step.getBoundingClientRect();
-                if (rect.top <= centerPoint && rect.bottom >= centerPoint) {
-                    foundActive = index;
+                if (rect.top <= centerPoint) {
+                    currentStep = index;
                 }
             });
 
-            if (foundActive !== -1) {
-                setActiveStep(foundActive);
+            if (currentStep !== activeStep) {
+                setActiveStep(currentStep);
             }
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
-
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [activeStep]);
 
     return (
         <section id="concept" className={styles.section}>
@@ -67,7 +116,7 @@ export default function Features() {
                     Comment ça marche
                 </h2>
             </div>
-            <div className={styles.container}>
+            <div className={styles.container} ref={containerRef}>
                 {/* Sticky Visuals (Desktop) */}
                 <div className={styles.stickyContainer}>
                     <div className={styles.visualWrapper}>
@@ -82,10 +131,16 @@ export default function Features() {
                                     rotateY: activeStep === index ? 0 : 20,
                                     zIndex: activeStep === index ? 10 : 0
                                 }}
-                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                             >
-                                <div style={{ width: '100%', maxWidth: '280px' }}>
-                                    <IPhoneMockup imageSrc={feature.image} />
+                                <div className={`${styles.mockupContainer} glass-strong`}>
+                                    <Image
+                                        src={feature.image}
+                                        alt={feature.title}
+                                        width={320}
+                                        height={640}
+                                        style={{ width: '100%', height: 'auto' }}
+                                    />
                                 </div>
                             </motion.div>
                         ))}
@@ -95,25 +150,16 @@ export default function Features() {
                 {/* Scrolling Text */}
                 <div className={styles.scrollContent}>
                     {featureData.map((feature, index) => (
-                        <div
+                        <FeatureStep
                             key={feature.id}
-                            data-feature-step
-                            className={`${styles.step} ${activeStep === index ? styles.stepActive : ''}`}
-                        >
-                            {/* Mobile Visual - Only visible on small screens */}
-                            <div className={styles.mobileVisual}>
-                                <div style={{ width: '100%', maxWidth: '240px', margin: '0 auto' }}>
-                                    <IPhoneMockup imageSrc={feature.image} />
-                                </div>
-                            </div>
-
-                            <div className={styles.number}>0{feature.id}</div>
-                            <h3 className={styles.featureTitle}>{feature.title}</h3>
-                            <p className={styles.featureText}>{feature.text}</p>
-                        </div>
+                            feature={feature}
+                            index={index}
+                            activeStep={activeStep}
+                        />
                     ))}
                 </div>
             </div>
         </section>
     );
 }
+
