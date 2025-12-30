@@ -11,6 +11,9 @@ export default function PrivacyPolicy() {
                     Bienvenue sur Dorable ("nous", "notre", "nos"). Nous accordons une importance primordiale à la confidentialité de vos données.
                     Cette politique explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application mobile et nos services.
                 </p>
+                <p className="mt-4 p-4 bg-pink-50 rounded-lg border border-pink-100">
+                    <strong>Nouveau :</strong> Pour plus d'informations sur la protection des données sensibles, veuillez consulter notre <a href="/health-privacy" className="text-pink-600 underline">Politique de confidentialité relative aux données de santé des consommateurs</a>.
+                </p>
             </section>
 
             <section className="mb-8">

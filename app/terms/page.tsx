@@ -8,8 +8,7 @@ export default function Terms() {
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">1. Acceptation des conditions</h2>
                 <p>
-                    En téléchargeant et en utilisant l'application Dorable, vous acceptez sans réserve les présentes Conditions Générales d'Utilisation.
-                    Si vous n'acceptez pas ces termes, veuillez ne pas utiliser l'application.
+                    En téléchargeant et en utilisant l'application Dorable, vous acceptez sans réserve les présentes Conditions Générales d'Utilisation ainsi que notre <a href="/privacy" className="text-pink-600 underline">Politique de Confidentialité</a> et notre <a href="/health-privacy" className="text-pink-600 underline">Politique relative aux données de santé</a>.
                 </p>
             </section>
 
