@@ -1,74 +1,52 @@
 export default function Terms() {
+    const sectionTitleStyle = {
+        fontSize: '1.5rem',
+        borderBottom: '1px solid rgba(0,0,0,0.08)',
+        paddingBottom: '0.5rem',
+        marginBottom: '1.5rem',
+        marginTop: '2.5rem',
+        fontFamily: 'var(--font-sans)',
+        fontWeight: '700',
+        color: 'var(--text-main)'
+    };
+
     return (
-        <main style={{ padding: '12rem 2rem 4rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: 'var(--text-main)', lineHeight: '1.6' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', marginBottom: '2.5rem', fontWeight: '900' }}>Conditions Générales d'Utilisation</h1>
+        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: 'var(--text-main)', lineHeight: '1.7' }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Conditions (CGU)</h1>
+            <p style={{ marginBottom: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>Dernière mise à jour : 30 Décembre 2025</p>
 
-            <p style={{ marginBottom: '2rem', opacity: 0.6 }}>Dernière mise à jour : 30 Décembre 2025</p>
-
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">1. Acceptation des conditions</h2>
+            <section>
+                <h2 style={sectionTitleStyle}>1. Acceptation des conditions</h2>
                 <p>
-                    En téléchargeant et en utilisant l'application Dorable, vous acceptez sans réserve les présentes Conditions Générales d'Utilisation ainsi que notre <a href="/privacy" className="text-pink-600 underline">Politique de Confidentialité</a> et notre <a href="/health-privacy" className="text-pink-600 underline">Politique relative aux données de santé</a>.
+                    En utilisant Dorable, vous acceptez nos CGU, notre <a href="/privacy" style={{ color: 'var(--brand-pink)', fontWeight: '600' }}>Politique de Confidentialité</a> et notre <a href="/health-privacy" style={{ color: 'var(--brand-pink)', fontWeight: '600' }}>Politique Santé</a>.
                 </p>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">2. Règles de la communauté</h2>
-                <p>Dorable est une communauté fondée sur le respect et la convivialité. Sont strictement interdits :</p>
-                <ul className="list-disc pl-5 mt-2">
-                    <li>Le harcèlement, les propos haineux, discriminatoires ou diffamatoires.</li>
-                    <li>Les contenus à caractère sexuel explicite ou violent.</li>
-                    <li>L'utilisation de l'application à des fins commerciales non autorisées (spam, démarchage).</li>
-                    <li>La création de faux profils (usurpation d'identité).</li>
-                </ul>
-                <p className="mt-2"><strong>Tolérance Zéro :</strong> Tout contenu enfreignant ces règles sera supprimé et l'utilisateur banni définitivement, sans préavis.</p>
+            <section>
+                <h2 style={sectionTitleStyle}>2. Règles de la communauté</h2>
+                <p>Dorable est un espace de respect. Tout comportement harcelant, illégal ou haineux entraînera un bannissement immédiat et définitif.</p>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">3. Contenu Utilisateur (EULA Apple)</h2>
+            <section>
+                <h2 style={sectionTitleStyle}>3. Sécurité et Modération</h2>
                 <p>
-                    Conformément aux exigences d'Apple :
-                </p>
-                <ul className="list-disc pl-5 mt-2">
-                    <li>Vous êtes seul responsable du contenu que vous publiez.</li>
-                    <li>Nous disposons d'un système de signalement permettant aux utilisateurs de rapporter tout contenu inapproprié et de bloquer tout utilisateur abusif.</li>
-                    <li>Nous nous engageons à traiter les signalements et à agir (suppression, bannissement) dans un délai de 24 heures.</li>
-                    <li>Nous nous réservons le droit d'engager des poursuites judiciaires et de signaler aux autorités compétentes tout contenu manifestement illicite ou portant atteinte aux droits de tiers.</li>
-                </ul>
-            </section>
-
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">4. Abonnements et Achats</h2>
-                <p>
-                    Certaines fonctionnalités "Premium" peuvent être soumises à un abonnement.
-                    Les paiements sont traités par l'Apple App Store et sont soumis aux conditions générales d'Apple.
-                    L'abonnement est renouvelé automatiquement sauf résiliation au moins 24 heures avant la fin de la période en cours.
+                    Nous appliquons une politique de tolérance zéro envers les contenus abusifs. Les utilisateurs peuvent signaler ou bloquer tout membre dont le comportement est inapproprié. Nous nous engageons à agir sur les signalements sous 24h.
                 </p>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">5. Géolocalisation</h2>
-                <p>
-                    Le service Dorable repose sur la mise en relation d'utilisateurs à proximité.
-                    L'utilisation de l'application nécessite l'activation de la géolocalisation pour vous suggérer des activités pertinentes autour de vous.
-                    Vous pouvez à tout moment désactiver ou modifier les autorisations de géolocalisation dans les réglages de votre appareil, ce qui pourrait toutefois limiter l'accès à certaines fonctionnalités de l'application.
-                </p>
+            <section>
+                <h2 style={sectionTitleStyle}>4. Géolocalisation</h2>
+                <p>L'application utilise votre position pour vous proposer des rencontres pertinentes autour de vous. Vous pouvez désactiver ce service à tout moment dans les réglages de votre téléphone.</p>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">6. Limitation de responsabilité</h2>
-                <p>
-                    Dorable agit en tant qu'intermédiaire technique. Nous ne sommes pas responsables des actions des utilisateurs lors des rencontres réelles.
-                    Nous vous encourageons à faire preuve de prudence et de bon sens lors de vos rencontres.
-                </p>
+            <section>
+                <h2 style={sectionTitleStyle}>5. Limitation de responsabilité</h2>
+                <p>Dorable facilite la mise en relation mais n'est pas responsable des interactions physiques entre les membres. Consultez nos <a href="/safety" style={{ color: 'var(--brand-pink)', fontWeight: '600' }}>Conseils de Sécurité</a> avant toute rencontre.</p>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-bold mb-2 mt-6">7. Contact</h2>
-                <p>
-                    Pour toute question concernant ces conditions, contactez-nous à : <strong>contact@dorable.app</strong>
-                </p>
-            </section>
+            <footer style={{ marginTop: '5rem', paddingTop: '2rem', borderTop: '1px solid rgba(0,0,0,0.08)', textAlign: 'center' }}>
+                <a href="/" style={{ color: 'var(--brand-pink)', textDecoration: 'none', fontWeight: '700', fontSize: '1.1rem' }}>← Retour à l'accueil</a>
+            </footer>
         </main>
     );
 }
