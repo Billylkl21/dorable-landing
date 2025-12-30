@@ -82,53 +82,37 @@ function FeatureStep({ feature, index, activeStep }: { feature: typeof featureDa
 export default function Features() {
     const [activeStep, setActiveStep] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
-    const lastActiveStep = useRef(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (!containerRef.current) return;
-            const steps = containerRef.current.querySelectorAll('[data-feature-step]');
-            const viewportHeight = window.innerHeight;
-            const centerPoint = viewportHeight / 2;
-            const buffer = 40; // Pixels of margin to prevent flickering
-
-            let detectedStep = 0;
-            steps.forEach((step, index) => {
-                const rect = step.getBoundingClientRect();
-                // Threshold for activating next step: must cross center line - buffer
-                if (rect.top <= centerPoint - buffer) {
-                    detectedStep = index;
-                }
-            });
-
-            // Hysteresis logic: only update if we've moved significantly
-            if (detectedStep !== lastActiveStep.current) {
-                const currentRect = steps[detectedStep].getBoundingClientRect();
-                const prevRect = lastActiveStep.current > 0 ? steps[lastActiveStep.current].getBoundingClientRect() : null;
-
-                // If moving forward: must be well past the trigger
-                // If moving backward: must be well ABOVE the trigger
-                // This prevents the "flash" back and forth
-                setActiveStep(prev => {
-                    if (detectedStep > prev) {
-                        lastActiveStep.current = detectedStep;
-                        return detectedStep;
-                    } else if (detectedStep < prev) {
-                        // To go back, the next step's top must be significantly below center
-                        const nextStepRect = steps[prev].getBoundingClientRect();
-                        if (nextStepRect.top > centerPoint + buffer) {
-                            lastActiveStep.current = detectedStep;
-                            return detectedStep;
-                        }
-                    }
-                    return prev;
-                });
-            }
+        const observerOptions = {
+            root: null,
+            rootMargin: '-45% 0px -45% 0px', // Detects when the element is in the middle 10% of the screen
+            threshold: 0
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
+        const observers: IntersectionObserver[] = [];
+
+        const steps = containerRef.current?.querySelectorAll('[data-feature-step]');
+
+        const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Number(entry.target.getAttribute('data-index'));
+                    setActiveStep(index);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+        steps?.forEach((step, index) => {
+            step.setAttribute('data-index', index.toString());
+            observer.observe(step);
+        });
+
+        return () => {
+            observer.disconnect();
+        };
     }, []);
 
     return (
@@ -150,14 +134,14 @@ export default function Features() {
                                 initial={false}
                                 animate={{
                                     opacity: activeStep === index ? 1 : 0,
-                                    scale: activeStep === index ? 1 : 0.95,
-                                    rotateY: activeStep === index ? 0 : 15,
+                                    scale: activeStep === index ? 1 : 0.98,
+                                    scaleZ: activeStep === index ? 1 : 0.9,
                                     zIndex: activeStep === index ? 10 : 0,
                                     pointerEvents: activeStep === index ? 'auto' : 'none'
                                 }}
                                 transition={{
-                                    opacity: { duration: 0.3 },
-                                    default: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+                                    opacity: { duration: 0.4, ease: "easeInOut" },
+                                    scale: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
                                 }}
                             >
                                 <div className={`${styles.mockupContainer} glass-strong`}>
