@@ -76,11 +76,11 @@
     display: inline-block;
     padding: 0.65rem 1.4rem;
 
-    /* Glassmorphism - Light Gray Distinction */
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Glassmorphism - Uniform Gray Premium */
+    background: rgba(40, 40, 40, 0.06);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 
     border-radius: var(--radius-pill);
     font-family: var(--font-mono);
@@ -113,10 +113,10 @@
     height: 300%;
     background: linear-gradient(to right,
             transparent 0%,
-            rgba(255, 255, 255, 0) 30%,
-            rgba(255, 255, 255, 0.9) 50%,
-            /* Sharper shine */
-            rgba(255, 255, 255, 0) 70%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 1) 50%,
+            /* Pure White Flash */
+            rgba(255, 255, 255, 0) 80%,
             transparent 100%);
     transform: rotate(35deg);
     animation: lightSweep 6s infinite ease-in-out;
@@ -133,9 +133,9 @@
         opacity: 1;
     }
 
-    30% {
-        left: 150%;
+    25% {
         opacity: 1;
+        left: 150%;
     }
 
     40%,
