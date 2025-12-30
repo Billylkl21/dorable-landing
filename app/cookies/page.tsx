@@ -1,9 +1,9 @@
 export default function CookiesPage() {
     return (
-        <main style={{ padding: '12rem 2rem 4rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: '#333', lineHeight: '1.6' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', marginBottom: '2rem' }}>Politique des Cookies</h1>
+        <main style={{ padding: '12rem 2rem 4rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: 'var(--text-main)', lineHeight: '1.6' }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', marginBottom: '2.5rem', fontWeight: '900' }}>Politique des Cookies</h1>
 
-            <p className="mb-4">Dernière mise à jour : 29 Décembre 2025</p>
+            <p style={{ marginBottom: '2rem', opacity: 0.6 }}>Dernière mise à jour : 30 Décembre 2025</p>
 
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">1. Qu'est-ce qu'un cookie ?</h2>
