@@ -25,7 +25,20 @@ export default function Hero() {
                         style={{ perspective: 1000 }}
                     >
                         <span className={styles.badge}>
-                            <span className={styles.badgeText}>The real-world social network is here.</span>
+                            {"The real-world social network is here.".split("").map((char, index) => (
+                                <motion.span
+                                    key={index}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{
+                                        duration: 0.05,
+                                        delay: 0.5 + index * 0.03,
+                                        ease: "easeIn"
+                                    }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
                         </span>
                     </motion.div>
 
