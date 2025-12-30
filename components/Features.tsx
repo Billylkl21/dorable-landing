@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent, useInView } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Features.module.css';
+import IPhoneMockup from './IPhoneMockup';
 
 const featureData = [
     {
@@ -38,31 +39,21 @@ export default function Features() {
             const viewportHeight = window.innerHeight;
             const centerPoint = viewportHeight / 2;
 
-            // Default to keeping the current state if no step is active (hysteresis)
-            // But we need to use a functional state update or a ref to know the 'current'
-            // state inside this closure if we want true hysteresis without deps.
-            // Actually, querying the active generic logic is simpler:
-            // Find the step that is currently crossing the center line.
-
             let foundActive = -1;
 
             steps.forEach((step, index) => {
                 const rect = step.getBoundingClientRect();
-                // Check if the step overlaps the center line
                 if (rect.top <= centerPoint && rect.bottom >= centerPoint) {
                     foundActive = index;
                 }
             });
 
-            // If we found a step crossing the center, update.
-            // If we are in a gap (foundActive === -1), do NOT update (keep previous image).
             if (foundActive !== -1) {
                 setActiveStep(foundActive);
             }
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        // Initial check
         handleScroll();
 
         return () => window.removeEventListener('scroll', handleScroll);
@@ -93,14 +84,8 @@ export default function Features() {
                                 }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
                             >
-                                <div className={`${styles.mockupContainer} glass-strong`}>
-                                    <Image
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        width={320}
-                                        height={640}
-                                        style={{ width: '100%', height: 'auto' }}
-                                    />
+                                <div style={{ width: '100%', maxWidth: '280px' }}>
+                                    <IPhoneMockup imageSrc={feature.image} />
                                 </div>
                             </motion.div>
                         ))}
@@ -117,14 +102,8 @@ export default function Features() {
                         >
                             {/* Mobile Visual - Only visible on small screens */}
                             <div className={styles.mobileVisual}>
-                                <div className={`${styles.mockupContainer} glass-strong`}>
-                                    <Image
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        width={320}
-                                        height={640}
-                                        style={{ width: '100%', height: 'auto' }}
-                                    />
+                                <div style={{ width: '100%', maxWidth: '240px', margin: '0 auto' }}>
+                                    <IPhoneMockup imageSrc={feature.image} />
                                 </div>
                             </div>
 
