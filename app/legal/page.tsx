@@ -17,7 +17,7 @@ export default function LegalPage() {
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">2. Direction de la publication</h2>
                 <p>
-                    Le Directeur de la publication du site est [Nom du responsable].
+                    Le Directeur de la publication du site est Lukale Umumbu.
                 </p>
             </section>
 
