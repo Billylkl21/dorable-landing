@@ -37,6 +37,7 @@ export default function Footer() {
                     <a href="/privacy" className={styles.link}>Confidentialité</a>
                     <a href="/health-privacy" className={styles.link}>Santé</a>
                     <a href="/terms" className={styles.link}>CGU</a>
+                    <a href="/safety" className={styles.link}>Sécurité</a>
                     <a href="/cookies" className={styles.link}>Cookies</a>
                 </div>
                 <p className={styles.copyright}>© 2025 Dorable. Paris.</p>
