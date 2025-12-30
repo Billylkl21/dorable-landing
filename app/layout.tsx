@@ -4,6 +4,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
+import SecurityWrapper from '@/components/SecurityWrapper';
 import { outfit, playfair } from './fonts';
 
 export const metadata: Metadata = {
@@ -19,12 +20,14 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={`${outfit.variable} ${playfair.variable}`}>
       <body suppressHydrationWarning>
-        <SmoothScroll>
-          <Header />
-          {children}
-          <Footer />
-          <CookieConsent />
-        </SmoothScroll>
+        <SecurityWrapper>
+          <SmoothScroll>
+            <Header />
+            {children}
+            <Footer />
+            <CookieConsent />
+          </SmoothScroll>
+        </SecurityWrapper>
       </body>
     </html>
   );

@@ -47,6 +47,18 @@ body {
   width: 100%;
   position: relative;
   -webkit-overflow-scrolling: touch;
+
+  /* Protection Content */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+img {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
 }
 
 /* Studio Grain Effect */
