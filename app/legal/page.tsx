@@ -8,11 +8,9 @@ export default function LegalPage() {
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">1. Éditeur du site</h2>
                 <p>
-                    L'application Dorable et le présent site sont édités par la société <strong>E-ICONS</strong>, SAS (Société par Actions Simplifiée) créée le 02/04/2024.<br />
-                    Immatriculée au Registre du Commerce et des Sociétés de Paris.<br />
-                    SIRET : 925 328 932 00015<br />
-                    Siège social : 231 RUE SAINT-HONORE, 75001 PARIS, France.<br />
-                    Contact : contact@dorable.app
+                    L'application Dorable ainsi que le présent site internet sont édités par la société <strong>E-ICONS</strong>, Société par Actions Simplifiée (SAS), immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro SIRET <strong>925 328 932 00015</strong>.<br /><br />
+                    <strong>Siège social :</strong> 231 rue Saint-Honoré, 75001 Paris, France.<br />
+                    <strong>Contact :</strong> contact@dorable.app
                 </p>
             </section>
 
