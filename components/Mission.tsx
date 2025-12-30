@@ -29,6 +29,21 @@ export default function Mission() {
                 >
                     <img src="/images/icons/metro.png" alt="Métro Parisien" />
                 </motion.div>
+
+                {/* Social Network Illustration */}
+                <motion.div
+                    className={styles.socialIllustration}
+                    animate={{
+                        y: [0, 10, 0],
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <img src="/images/real_social_network.png" alt="Le réseau social du monde réel" />
+                </motion.div>
                 {/* Newspaper Header */}
                 <div className={styles.newspaperHeader}>
                     <div className={styles.metaRow}>
