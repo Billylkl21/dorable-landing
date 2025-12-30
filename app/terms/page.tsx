@@ -34,6 +34,7 @@ export default function Terms() {
                     <li>Vous êtes seul responsable du contenu que vous publiez.</li>
                     <li>Nous disposons d'un système de signalement permettant aux utilisateurs de rapporter tout contenu inapproprié.</li>
                     <li>Nous nous engageons à traiter les signalements et à agir (suppression, bannissement) dans un délai de 24 heures.</li>
+                    <li>Nous nous réservons le droit d'engager des poursuites judiciaires et de signaler aux autorités compétentes tout contenu manifestement illicite ou portant atteinte aux droits de tiers.</li>
                 </ul>
             </section>
 
