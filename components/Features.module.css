@@ -1,6 +1,8 @@
 .section {
     padding: var(--section-padding);
     background: #fafaf9;
+    overflow: hidden;
+    /* Prevent horizontal wiggle */
 }
 
 .header {
@@ -55,13 +57,20 @@
 
 .number {
     font-family: var(--font-serif);
-    font-size: 12rem;
+    font-size: clamp(8rem, 15vw, 12rem);
     font-weight: 900;
     color: var(--brand-pink);
     opacity: 0.05;
     margin-bottom: -4rem;
     margin-left: -2rem;
     line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .number {
+        margin-left: 0;
+        margin-bottom: -2rem;
+    }
 }
 
 .featureTitle {
