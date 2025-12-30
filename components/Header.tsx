@@ -35,7 +35,7 @@ export default function Header() {
                 </Link>
                 <div className={styles.linksWrapper}>
                     <Link href="/#concept" className={styles.link}>Le Concept</Link>
-                    <Link href="/#esprit" className={styles.link}>L'Esprit</Link>
+                    <Link href="/#esprit" className={styles.link}>L'adorable</Link>
                     <Link href="/#lifestyle" className={styles.link}>L'Art de Vivre</Link>
                     <Link href="/#join" className={styles.cta}>Télécharger</Link>
                 </div>
