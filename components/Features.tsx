@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Features.module.css';
 
@@ -42,8 +42,8 @@ function FeatureStep({ feature, index, activeStep }: { feature: typeof featureDa
     return (
         <div
             ref={stepRef}
-            key={feature.id}
             data-feature-step
+            data-index={index}
             className={`${styles.step} ${activeStep === index ? styles.stepActive : ''}`}
         >
             {/* Mobile Visual */}
@@ -84,35 +84,29 @@ export default function Features() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '-45% 0px -45% 0px', // Detects when the element is in the middle 10% of the screen
-            threshold: 0
-        };
-
-        const observers: IntersectionObserver[] = [];
-
-        const steps = containerRef.current?.querySelectorAll('[data-feature-step]');
-
-        const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const index = Number(entry.target.getAttribute('data-index'));
+        const observer = new IntersectionObserver(
+            (entries) => {
+                // Find the entry that is most prominent/intersecting
+                const intersecting = entries.filter(e => e.isIntersecting);
+                if (intersecting.length > 0) {
+                    // If multiple are intersecting, pick the one with highest intersection ratio or largest index
+                    const target = intersecting.reduce((prev, curr) =>
+                        curr.intersectionRatio > prev.intersectionRatio ? curr : prev
+                    );
+                    const index = Number(target.target.getAttribute('data-index'));
                     setActiveStep(index);
                 }
-            });
-        };
+            },
+            {
+                rootMargin: '-50% 0px -49% 0px', // Hit point precisely at the center
+                threshold: [0, 0.1, 0.2]
+            }
+        );
 
-        const observer = new IntersectionObserver(handleIntersection, observerOptions);
+        const steps = containerRef.current?.querySelectorAll('[data-feature-step]');
+        steps?.forEach(step => observer.observe(step));
 
-        steps?.forEach((step, index) => {
-            step.setAttribute('data-index', index.toString());
-            observer.observe(step);
-        });
-
-        return () => {
-            observer.disconnect();
-        };
+        return () => observer.disconnect();
     }, []);
 
     return (
@@ -127,34 +121,27 @@ export default function Features() {
                 {/* Sticky Visuals (Desktop) */}
                 <div className={styles.stickyContainer}>
                     <div className={styles.visualWrapper}>
-                        {featureData.map((feature, index) => (
-                            <motion.div
-                                key={feature.id}
-                                className={styles.visual}
-                                initial={false}
-                                animate={{
-                                    opacity: activeStep === index ? 1 : 0,
-                                    scale: activeStep === index ? 1 : 0.98,
-                                    scaleZ: activeStep === index ? 1 : 0.9,
-                                    zIndex: activeStep === index ? 10 : 0,
-                                    pointerEvents: activeStep === index ? 'auto' : 'none'
-                                }}
-                                transition={{
-                                    opacity: { duration: 0.4, ease: "easeInOut" },
-                                    scale: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
-                                }}
-                            >
-                                <div className={`${styles.mockupContainer} glass-strong`}>
+                        <div className={`${styles.mockupContainer} glass-strong`} style={{ overflow: 'hidden' }}>
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeStep}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                    style={{ width: '100%', height: '100%' }}
+                                >
                                     <Image
-                                        src={feature.image}
-                                        alt={feature.title}
+                                        src={featureData[activeStep].image}
+                                        alt={featureData[activeStep].title}
                                         width={320}
                                         height={640}
-                                        style={{ width: '100%', height: 'auto' }}
+                                        priority
+                                        style={{ width: '100%', height: 'auto', display: 'block' }}
                                     />
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
                     </div>
                 </div>
 
@@ -173,4 +160,3 @@ export default function Features() {
         </section>
     );
 }
-
