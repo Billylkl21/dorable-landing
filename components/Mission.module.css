@@ -303,36 +303,22 @@
 
 .metroIllustration {
     position: absolute;
-    top: -120px;
-    left: 50%;
-    margin-left: -480px;
-    /* Offset from center to be on the left of social banner */
-    width: 280px;
+    top: -220px;
+    left: -30px;
+    /* Shifted back to the left */
+    width: 400px;
+    /* Even larger */
     height: auto;
     pointer-events: none;
     z-index: 5;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
-.socialIllustration {
-    position: absolute;
-    top: -240px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 650px;
-    height: auto;
-    pointer-events: none;
-    z-index: 6;
-    /* On top */
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
-}
-
 .wineIllustration img,
-.metroIllustration img,
-.socialIllustration img {
+.metroIllustration img {
     width: 100%;
     height: auto;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
 @media (max-width: 1024px) {
@@ -343,14 +329,9 @@
     }
 
     .metroIllustration {
-        width: 120px;
-        top: -60px;
-        left: 5%;
-    }
-
-    .socialIllustration {
-        width: 280px;
-        top: -100px;
-        left: 50%;
+        width: 220px;
+        top: -120px;
+        left: -10px;
+        right: auto;
     }
 }
