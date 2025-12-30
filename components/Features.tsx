@@ -84,29 +84,31 @@ export default function Features() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                // Find the entry that is most prominent/intersecting
-                const intersecting = entries.filter(e => e.isIntersecting);
-                if (intersecting.length > 0) {
-                    // If multiple are intersecting, pick the one with highest intersection ratio or largest index
-                    const target = intersecting.reduce((prev, curr) =>
-                        curr.intersectionRatio > prev.intersectionRatio ? curr : prev
-                    );
-                    const index = Number(target.target.getAttribute('data-index'));
-                    setActiveStep(index);
+        const handleScroll = () => {
+            if (!containerRef.current) return;
+            const steps = containerRef.current.querySelectorAll('[data-feature-step]');
+            const centerPoint = window.innerHeight / 2;
+
+            let currentStep = 0;
+            let minDistance = Infinity;
+
+            steps.forEach((step, index) => {
+                const rect = step.getBoundingClientRect();
+                const stepCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(centerPoint - stepCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    currentStep = index;
                 }
-            },
-            {
-                rootMargin: '-50% 0px -49% 0px', // Hit point precisely at the center
-                threshold: [0, 0.1, 0.2]
-            }
-        );
+            });
 
-        const steps = containerRef.current?.querySelectorAll('[data-feature-step]');
-        steps?.forEach(step => observer.observe(step));
+            setActiveStep(currentStep);
+        };
 
-        return () => observer.disconnect();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -122,13 +124,16 @@ export default function Features() {
                 <div className={styles.stickyContainer}>
                     <div className={styles.visualWrapper}>
                         <div className={`${styles.mockupContainer} glass-strong`} style={{ overflow: 'hidden' }}>
-                            <AnimatePresence mode="wait">
+                            <AnimatePresence mode="popLayout">
                                 <motion.div
                                     key={activeStep}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                    initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 1.05, y: -10 }}
+                                    transition={{
+                                        duration: 0.4,
+                                        ease: [0.22, 1, 0.36, 1]
+                                    }}
                                     style={{ width: '100%', height: '100%' }}
                                 >
                                     <Image
