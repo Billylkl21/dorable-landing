@@ -1,6 +1,7 @@
 .footer {
     position: relative;
-    padding: 1.5rem 1rem 1rem;
+    padding: 3rem 1rem 1rem;
+    /* Unified top padding */
     background: #fff;
     overflow: hidden;
     display: flex;
@@ -11,7 +12,8 @@
 
 .statementWrapper {
     max-width: 800px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 3rem;
+    /* Unified bottom margin - matches footer top padding */
     text-align: center;
 }
 
@@ -22,7 +24,8 @@
     font-weight: 500;
     font-style: italic;
     color: #121212;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    /* Removed extra margin that caused inequality */
 }
 
 .statementHighlight {
@@ -110,11 +113,15 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 3rem 1.5rem 1rem;
+        padding: 2.5rem 1.5rem 1rem;
+    }
+
+    .statementWrapper {
+        margin-bottom: 2.5rem;
     }
 
     .statement {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
 
     .bigTitle {
