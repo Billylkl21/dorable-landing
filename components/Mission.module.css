@@ -1,11 +1,10 @@
 /* Main Section Wrapper */
 .section {
     padding: 4rem 1rem;
-    /* Reduced vert padding on mobile */
     position: relative;
-    /* Transparent or global bg to let the paper pop */
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 /* The "Physical" Paper Card */
