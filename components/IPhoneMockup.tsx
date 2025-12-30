@@ -4,11 +4,10 @@ import React from 'react';
 import styles from './IPhoneMockup.module.css';
 
 interface IPhoneMockupProps {
-    videoSrc?: string;
-    imageSrc?: string;
+    videoSrc: string;
 }
 
-export default function IPhoneMockup({ videoSrc, imageSrc }: IPhoneMockupProps) {
+export default function IPhoneMockup({ videoSrc }: IPhoneMockupProps) {
     return (
         <div className={styles.mockupContainer}>
             {/* Buttons */}
@@ -21,25 +20,14 @@ export default function IPhoneMockup({ videoSrc, imageSrc }: IPhoneMockupProps) 
             <div className={styles.dynamicIsland} />
 
             <div className={styles.screenWrapper}>
-                {videoSrc ? (
-                    <video
-                        className={styles.video}
-                        src={videoSrc}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    />
-                ) : (
-                    imageSrc && (
-                        <img
-                            src={imageSrc}
-                            alt="App Screenshot"
-                            className={styles.video}
-                            style={{ objectFit: 'cover', height: '100%', width: '100%' }}
-                        />
-                    )
-                )}
+                <video
+                    className={styles.video}
+                    src={videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                />
                 <div className={styles.gloss} />
             </div>
         </div>
