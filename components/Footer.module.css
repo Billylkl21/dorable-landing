@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-    padding: 2rem 1rem 1rem;
+    padding: 1.5rem 1rem 1rem;
     background: #fff;
     overflow: hidden;
     display: flex;
@@ -110,7 +110,7 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 6rem 1.5rem 2rem;
+        padding: 3rem 1.5rem 1rem;
     }
 
     .statement {
