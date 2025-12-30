@@ -72,7 +72,7 @@ export default function Features() {
         <section id="concept" className={styles.section}>
             <div className={styles.header}>
                 <span className={styles.label}>Mode d'Emploi</span>
-                <h2 className="title-xl" style={{ fontSize: '3.5rem', marginTop: '1rem' }}>
+                <h2 className="title-xl" style={{ fontSize: '2.5rem' }}>
                     Comment ça marche
                 </h2>
             </div>

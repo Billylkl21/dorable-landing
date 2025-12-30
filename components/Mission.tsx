@@ -14,6 +14,21 @@ export default function Mission() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-10%" }}
             >
+                {/* Metro Illustration */}
+                <motion.div
+                    className={styles.metroIllustration}
+                    animate={{
+                        y: [0, -10, 0],
+                        rotate: [0, -2, 0, 2, 0]
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <img src="/images/icons/metro.png" alt="Métro Parisien" />
+                </motion.div>
                 {/* Newspaper Header */}
                 <div className={styles.newspaperHeader}>
                     <div className={styles.metaRow}>
@@ -134,6 +149,22 @@ export default function Mission() {
                         </motion.article>
                     </div>
                 </div>
+
+                {/* Floating Wine Glass Doodle */}
+                <motion.div
+                    className={styles.wineIllustration}
+                    animate={{
+                        rotate: [0, 5, 0, -5, 0],
+                        y: [0, -10, 0]
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                >
+                    <img src="/images/icons/wine_glass.png" alt="" />
+                </motion.div>
             </motion.div>
         </section>
     );

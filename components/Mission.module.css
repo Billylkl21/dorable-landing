@@ -289,3 +289,49 @@
         grid-template-columns: 1fr;
     }
 }
+
+.wineIllustration {
+    position: absolute;
+    bottom: -60px;
+    right: -50px;
+    width: 280px;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.metroIllustration {
+    position: absolute;
+    top: -220px;
+    left: -30px;
+    /* Shifted back to the left */
+    width: 400px;
+    /* Even larger */
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.wineIllustration img,
+.metroIllustration img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+    .wineIllustration {
+        width: 180px;
+        bottom: -30px;
+        right: -20px;
+    }
+
+    .metroIllustration {
+        width: 220px;
+        top: -120px;
+        left: -10px;
+        right: auto;
+    }
+}
