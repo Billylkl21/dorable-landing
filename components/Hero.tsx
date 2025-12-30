@@ -11,9 +11,18 @@ export default function Hero() {
             <div className={styles.container}>
                 <div className={styles.textContent}>
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, y: -20, rotateX: -10 }}
+                        animate={{
+                            opacity: 1,
+                            y: [0, -5, 0],
+                            rotateX: [0, 5, 0]
+                        }}
+                        transition={{
+                            opacity: { duration: 0.8 },
+                            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                            rotateX: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                        style={{ perspective: 1000 }}
                     >
                         <span className={styles.badge}>
                             The real-world social network is here.
