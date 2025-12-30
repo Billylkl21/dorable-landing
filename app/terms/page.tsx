@@ -3,7 +3,7 @@ export default function Terms() {
         <main style={{ padding: '12rem 2rem 4rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: '#333', lineHeight: '1.6' }}>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', marginBottom: '2rem' }}>Conditions Générales d'Utilisation (CGU)</h1>
 
-            <p className="mb-4">Dernière mise à jour : 29 Décembre 2025</p>
+            <p className="mb-4">Dernière mise à jour : 30 Décembre 2025</p>
 
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">1. Acceptation des conditions</h2>
@@ -57,7 +57,7 @@ export default function Terms() {
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-2 mt-6">6. Contact</h2>
                 <p>
-                    Pour toute question concernant ces conditions, contactez-nous à : <strong>legal@dorable.app</strong>
+                    Pour toute question concernant ces conditions, contactez-nous à : <strong>contact@dorable.app</strong>
                 </p>
             </section>
         </main>
