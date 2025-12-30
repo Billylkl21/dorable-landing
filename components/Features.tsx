@@ -82,6 +82,7 @@ function FeatureStep({ feature, index, activeStep }: { feature: typeof featureDa
 export default function Features() {
     const [activeStep, setActiveStep] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
+    const lastActiveStep = useRef(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -89,24 +90,46 @@ export default function Features() {
             const steps = containerRef.current.querySelectorAll('[data-feature-step]');
             const viewportHeight = window.innerHeight;
             const centerPoint = viewportHeight / 2;
+            const buffer = 40; // Pixels of margin to prevent flickering
 
-            let currentStep = 0;
+            let detectedStep = 0;
             steps.forEach((step, index) => {
                 const rect = step.getBoundingClientRect();
-                if (rect.top <= centerPoint) {
-                    currentStep = index;
+                // Threshold for activating next step: must cross center line - buffer
+                if (rect.top <= centerPoint - buffer) {
+                    detectedStep = index;
                 }
             });
 
-            if (currentStep !== activeStep) {
-                setActiveStep(currentStep);
+            // Hysteresis logic: only update if we've moved significantly
+            if (detectedStep !== lastActiveStep.current) {
+                const currentRect = steps[detectedStep].getBoundingClientRect();
+                const prevRect = lastActiveStep.current > 0 ? steps[lastActiveStep.current].getBoundingClientRect() : null;
+
+                // If moving forward: must be well past the trigger
+                // If moving backward: must be well ABOVE the trigger
+                // This prevents the "flash" back and forth
+                setActiveStep(prev => {
+                    if (detectedStep > prev) {
+                        lastActiveStep.current = detectedStep;
+                        return detectedStep;
+                    } else if (detectedStep < prev) {
+                        // To go back, the next step's top must be significantly below center
+                        const nextStepRect = steps[prev].getBoundingClientRect();
+                        if (nextStepRect.top > centerPoint + buffer) {
+                            lastActiveStep.current = detectedStep;
+                            return detectedStep;
+                        }
+                    }
+                    return prev;
+                });
             }
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [activeStep]);
+    }, []);
 
     return (
         <section id="concept" className={styles.section}>
@@ -124,14 +147,18 @@ export default function Features() {
                             <motion.div
                                 key={feature.id}
                                 className={styles.visual}
-                                initial={{ opacity: 0, scale: 0.9, rotateY: 10 }}
+                                initial={false}
                                 animate={{
                                     opacity: activeStep === index ? 1 : 0,
-                                    scale: activeStep === index ? 1 : 0.9,
-                                    rotateY: activeStep === index ? 0 : 20,
-                                    zIndex: activeStep === index ? 10 : 0
+                                    scale: activeStep === index ? 1 : 0.95,
+                                    rotateY: activeStep === index ? 0 : 15,
+                                    zIndex: activeStep === index ? 10 : 0,
+                                    pointerEvents: activeStep === index ? 'auto' : 'none'
                                 }}
-                                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                transition={{
+                                    opacity: { duration: 0.3 },
+                                    default: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+                                }}
                             >
                                 <div className={`${styles.mockupContainer} glass-strong`}>
                                     <Image
