@@ -32,6 +32,9 @@ export default function Footer() {
             </div>
 
             <div className={styles.footerBottom}>
+                <div style={{ marginBottom: '1rem', fontSize: '0.8rem', opacity: 0.5, textAlign: 'center' }}>
+                    Candidat - La Fabrique Abeille Assurances • Lutter contre la solitude
+                </div>
                 <div className={styles.links}>
                     <a href="/legal" className={styles.link}>Mentions Légales</a>
                     <a href="/privacy" className={styles.link}>Confidentialité</a>

@@ -1,11 +1,38 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 import IPhoneMockup from './IPhoneMockup';
+import Countdown from './Countdown';
 
 export default function Hero() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [sponsor, setSponsor] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email.includes('@')) {
+            try {
+                await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, sponsor }),
+                });
+                setSubmitted(true);
+            } catch (error) {
+                console.error('Failed to submit:', error);
+                // Optionally handle error state here
+                setSubmitted(true); // Show success anyway for now to not break flow
+            }
+        }
+    };
+
     return (
         <section id="join" className={styles.heroSection}>
             <div className={styles.container}>
@@ -16,7 +43,7 @@ export default function Hero() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className={styles.badge}>
-                            The real-world social network is here.
+                            🐝 Candidat <strong>La Fabrique Abeille Assurances</strong>
                         </span>
                     </motion.div>
 
@@ -29,33 +56,72 @@ export default function Hero() {
                         className={`subtitle-lg reveal delay-2 ${styles.subtitle}`}
                         style={{ marginTop: '1.5rem' }}
                     >
-                        Fini les agendas rigides et les dîners imposés. <br className="hidden md:block" />
-                        Avec Dorable, <strong>vous donnez le tempo</strong>. <br className="hidden md:block" />
+                        <strong>Notre réponse à la solitude : créer des rencontres spontanées autour d'expériences sociales.</strong> <br className="hidden md:block" />
+                        Dorable connecte instantanément vos envies et vos lieux préférés pour des rencontres réelles. <br className="hidden md:block" />
                         <span className={styles.activityLine}>
                             Une envie de Japonais ? <span className={styles.icon3d}>🍣</span> D'une expo ? <span className={styles.icon3d}>🎨</span> D'un jogging ? <span className={styles.icon3d}>🏃</span> D'un Pilates ? <span className={styles.icon3d}>🧘‍♀️</span>
                         </span>
                         <br />
-                        Quand les centres d’intérêt deviennent des rencontres.
-                        C'est la spontanéité d'un claquement de doigts, la qualité d'un club privé.
+                        Retrouvons le plaisir de vivre la ville ensemble, simplement et maintenant.
                     </motion.p>
+
+                    {/* <Countdown /> */}
 
                     <motion.div
                         className="reveal delay-3"
                         style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}
                     >
-                        <motion.a
-                            href="#join"
-                            className={`${styles.button} button-premium`}
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                            Rejoindre
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '0.8rem' }}>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </motion.a>
+                        <AnimatePresence mode="wait">
+                            {submitted ? (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className={styles.badge}
+                                    style={{ background: 'rgba(34, 197, 94, 0.1)', color: '#15803d', borderColor: '#86efac', marginBottom: 0 }}
+                                >
+                                    🎉 Vous êtes sur la liste !
+                                </motion.div>
+                            ) : (
+                                <motion.form
+                                    onSubmit={handleSubmit}
+                                    className={styles.waitlistForm}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                >
+                                    <input
+                                        type="text"
+                                        placeholder="Prénom"
+                                        className={styles.waitlistInput}
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        style={{ width: '80px', flexShrink: 0 }}
+                                        required
+                                    />
+                                    <div style={{ width: '1px', height: '20px', background: 'rgba(0,0,0,0.1)' }}></div>
+                                    <input
+                                        type="email"
+                                        placeholder="Email"
+                                        className={styles.waitlistInput}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                    />
+                                    <div style={{ width: '1px', height: '20px', background: 'rgba(0,0,0,0.1)' }}></div>
+                                    <input
+                                        type="text"
+                                        placeholder="Parrain"
+                                        className={styles.waitlistInput}
+                                        value={sponsor}
+                                        onChange={(e) => setSponsor(e.target.value)}
+                                        style={{ width: '70px', flexShrink: 0 }}
+                                    />
+                                    <button type="submit" className={styles.waitlistButton}>
+                                        Rejoindre la liste
+                                    </button>
+                                </motion.form>
+                            )}
+                        </AnimatePresence>
 
                         <div className={styles.socialProof}>
                             <div className={styles.marqueeWrapper}>
@@ -80,6 +146,27 @@ export default function Hero() {
                                 <span style={{ fontWeight: 700 }}>+10k</span> parisiens intéressés
                             </span>
                         </div>
+
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 0.7 }}
+                            transition={{ delay: 2, duration: 1 }}
+                            style={{
+                                marginTop: '1.5rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                fontSize: '0.85rem',
+                                fontFamily: 'var(--font-sans)',
+                                color: 'var(--text-muted)',
+                                background: 'rgba(255,255,255,0.5)',
+                                padding: '0.4rem 1rem',
+                                borderRadius: '20px',
+                                backdropFilter: 'blur(10px)'
+                            }}
+                        >
+                            <span style={{ fontWeight: 500 }}>The real-world social network is here.</span>
+                        </motion.div>
                     </motion.div>
                 </div>
 

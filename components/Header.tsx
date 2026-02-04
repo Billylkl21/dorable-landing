@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import styles from './Header.module.css';
 import Link from 'next/link';
+import WaitlistModal from './WaitlistModal';
 
 import Image from 'next/image';
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
@@ -37,9 +39,12 @@ export default function Header() {
                     <Link href="/#concept" className={styles.link}>Le Concept</Link>
                     <Link href="/#esprit" className={styles.link}>L'adorable</Link>
                     <Link href="/#lifestyle" className={styles.link}>L'Art de Vivre</Link>
-                    <Link href="/#join" className={styles.cta}>Télécharger</Link>
+                    <button onClick={() => setIsModalOpen(true)} className={styles.cta}>
+                        Rejoindre la liste
+                    </button>
                 </div>
             </nav>
+            <WaitlistModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </motion.header>
     );
 }
