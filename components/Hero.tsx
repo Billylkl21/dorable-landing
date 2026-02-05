@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Hero.module.css';
 import IPhoneMockup from './IPhoneMockup';
 import Countdown from './Countdown';
@@ -42,9 +43,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className={styles.badge}>
-                            🐝 Candidat <strong>La Fabrique Abeille Assurances</strong>
-                        </span>
+                        <Link href="/abeille" className={styles.badgeLink}>
+                            <span className={styles.badge}>
+                                🐝 Candidat <strong>La Fabrique Abeille Assurances</strong>
+                            </span>
+                        </Link>
                     </motion.div>
 
                     <h1 className="title-xl reveal delay-1">

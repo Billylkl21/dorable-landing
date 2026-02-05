@@ -109,6 +109,16 @@
     transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.badgeLink {
+    text-decoration: none;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    display: inline-block;
+}
+
+.badgeLink:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
 
 
 .badge:hover {
