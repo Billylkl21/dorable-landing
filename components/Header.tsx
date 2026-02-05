@@ -49,7 +49,7 @@ export default function Header() {
                             <Link href="/abeille#impacts" className={styles.link}>Impacts</Link>
                             <Link href="/abeille#equipe" className={styles.link}>L&apos;Équipe</Link>
                             <button onClick={() => setIsContactOpen(true)} className={styles.cta}>
-                                Voter pour nous
+                                Devenir Parrain de Billy
                             </button>
                         </>
                     ) : (
