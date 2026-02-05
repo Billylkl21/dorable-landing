@@ -517,13 +517,24 @@ export default function AbeillePage() {
                                 Nous serions honorés de débuter cette aventure à vos côtés et de créer, ensemble, un impact social d&apos;envergure pour La Fabrique Abeille Assurances.
                                 Cliquez ci-dessous pour nous soutenir ou échanger directement avec moi.
                             </p>
-                            <button
+                            <motion.button
                                 onClick={() => setIsContactModalOpen(true)}
                                 className="button-premium"
                                 style={{ border: 'none', cursor: 'pointer' }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                animate={{
+                                    boxShadow: ["0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)", "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"],
+                                    scale: [1, 1.02, 1]
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
                             >
                                 Devenir mon Parrain & Me contacter <ArrowRight size={20} />
-                            </button>
+                            </motion.button>
                         </motion.div>
                     </div>
                 </section>
