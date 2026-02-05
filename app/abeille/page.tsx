@@ -332,7 +332,7 @@ export default function AbeillePage() {
                                         <div className={styles.strategyValue}>30%</div>
                                     </div>
                                     <div className={styles.progressBar}><motion.div className={styles.progressFill} initial={{ width: 0 }} whileInView={{ width: '30%' }} transition={{ duration: 1, delay: 0.9 }} /></div>
-                                    <p className={styles.strategyDescription}>Optimisation de l&apos;IA de matching et intégration POI.</p>
+                                    <p className={styles.strategyDescription}>Optimisation de l&apos;IA de matching et Intégration des Lieux Partenaires.</p>
                                 </div>
                                 <div className={styles.strategyItem}>
                                     <div className={styles.strategyHeader}>
