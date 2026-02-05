@@ -2,22 +2,28 @@
 
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+    const pathname = usePathname();
+    const isAbeillePage = pathname === '/abeille';
+
     return (
         <footer className={styles.footer}>
-            <div className={styles.statementWrapper}>
-                <motion.p
-                    className={styles.statement}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
-                    La vie est trop belle<br />
-                    <span className={styles.statementHighlight}>pour la vivre derrière un écran.</span>
-                </motion.p>
-            </div>
+            {!isAbeillePage && (
+                <div className={styles.statementWrapper}>
+                    <motion.p
+                        className={styles.statement}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        La vie est trop belle<br />
+                        <span className={styles.statementHighlight}>pour la vivre derrière un écran.</span>
+                    </motion.p>
+                </div>
+            )}
 
             <div className={styles.bigTitleWrapper}>
                 <motion.h1
