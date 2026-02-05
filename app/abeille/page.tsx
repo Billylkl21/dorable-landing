@@ -211,7 +211,7 @@ export default function AbeillePage() {
                                 </div>
                                 <div className={styles.statItem}>
                                     <div className={styles.projectImageWrapper}>
-                                        <Image src="/images/problem_remote.png" alt="Remote" width={200} height={200} className={styles.projectImage} />
+                                        <Image src="/images/illu_newyork.jpg" alt="Remote" width={200} height={200} className={styles.projectImage} />
                                     </div>
                                     <div className={styles.statContent}>
                                         <h4><Counter value={33} suffix="%" /></h4>
