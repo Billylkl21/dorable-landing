@@ -12,7 +12,6 @@ interface WaitlistModalProps {
 }
 
 export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
-    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [sponsor, setSponsor] = useState('');
     const [submitted, setSubmitted] = useState(false);
@@ -30,13 +29,12 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                 await fetch('/api/waitlist', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, sponsor }),
+                    body: JSON.stringify({ name: '', email, sponsor }),
                 });
                 setSubmitted(true);
                 setTimeout(() => {
                     onClose();
                     setSubmitted(false);
-                    setName('');
                     setEmail('');
                     setSponsor('');
                 }, 2000);
@@ -82,21 +80,10 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                 >
-                                    🎉 Merci {name} ! Vous êtes sur la liste.
+                                    🎉 Merci ! Vous êtes sur la liste.
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleSubmit} className={styles.form}>
-                                    <div className={styles.inputGroup}>
-                                        <label className={styles.label}>Prénom</label>
-                                        <input
-                                            type="text"
-                                            className={styles.input}
-                                            value={name}
-                                            onChange={(e) => setName(e.target.value)}
-                                            placeholder="Votre prénom"
-                                            required
-                                        />
-                                    </div>
                                     <div className={styles.inputGroup}>
                                         <label className={styles.label}>Email</label>
                                         <input
