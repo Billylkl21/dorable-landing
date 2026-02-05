@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion, useInView, animate } from 'framer-motion';
+import { motion, useInView, animate, Variants } from 'framer-motion';
 import {
     Users,
     ShieldCheck,
@@ -46,7 +46,7 @@ function Counter({ value, suffix = '', prefix = '', decimals = 0 }: { value: num
 
 export default function AbeillePage() {
     const [isContactModalOpen, setIsContactModalOpen] = React.useState(false);
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -56,9 +56,13 @@ export default function AbeillePage() {
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
     };
 
     return (
