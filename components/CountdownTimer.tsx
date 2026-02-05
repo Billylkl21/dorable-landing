@@ -50,7 +50,7 @@ export default function CountdownTimer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
         >
-            <div className={styles.title}>Fin des votes dans</div>
+            <div className={styles.title}>Fin des candidatures dans</div>
             <div className={styles.countdownContainer}>
                 <div className={styles.timeUnit}>
                     <span className={styles.number}>{timeLeft.days}</span>
