@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { createPortal } from 'react-dom';
 import styles from './WaitlistModal.module.css';
 
 interface WaitlistModalProps {
@@ -15,6 +16,12 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     const [email, setEmail] = useState('');
     const [sponsor, setSponsor] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -40,7 +47,9 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         }
     };
 
-    return (
+    if (!mounted) return null;
+
+    const modalContent = (
         <AnimatePresence>
             {isOpen && (
                 <>
@@ -62,7 +71,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                 <X size={20} />
                             </button>
 
-                            <h2 className={styles.title}>Rejoindre l'aventure</h2>
+                            <h2 className={styles.title}>Rejoindre l&apos;aventure</h2>
                             <p className={styles.subtitle}>
                                 Inscrivez-vous pour un accès en avant-première et bénéficiez de <strong>tarifs exceptionnels à vie</strong> réservés aux premiers membres.
                             </p>
@@ -110,7 +119,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                         />
                                     </div>
                                     <button type="submit" className={styles.submitButton}>
-                                        S'inscrire sur la liste
+                                        S&apos;inscrire sur la liste
                                     </button>
                                 </form>
                             )}
@@ -120,4 +129,6 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             )}
         </AnimatePresence>
     );
+
+    return createPortal(modalContent, document.body);
 }

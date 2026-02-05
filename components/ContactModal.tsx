@@ -1,7 +1,7 @@
-'use client';
-
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Phone, User } from 'lucide-react';
+import { createPortal } from 'react-dom';
 import styles from './ContactModal.module.css';
 
 interface ContactModalProps {
@@ -10,7 +10,16 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
-    return (
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
+
+    if (!mounted) return null;
+
+    const modalContent = (
         <AnimatePresence>
             {isOpen && (
                 <>
@@ -83,4 +92,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             )}
         </AnimatePresence>
     );
+
+    return createPortal(modalContent, document.body);
 }
