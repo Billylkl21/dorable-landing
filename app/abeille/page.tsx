@@ -129,6 +129,7 @@ export default function AbeillePage() {
                                 <p className={styles.deathDescription}>
                                     Entre 2014 et 2019, plus de 871 000 décès par an ont été directement liés à l&apos;isolement social.
                                     Une preuve irréfutable que la <strong>santé sociale</strong> est un pilier vital.
+                                    <br /><span style={{ fontSize: '0.75rem', opacity: 0.6, fontStyle: 'italic', marginTop: '0.5rem', display: 'block' }}>Source : Organisation Mondiale de la Santé (OMS)</span>
                                 </p>
                             </motion.div>
 
