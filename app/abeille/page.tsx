@@ -510,7 +510,7 @@ export default function AbeillePage() {
                         >
                             <h2 className="serif">Merci d&apos;avoir pris le temps de découvrir Dorable.</h2>
                             <p>
-                                Si notre vision vous résonne, nous serions honorés de vous compter parmi nos parrains pour La Fabrique Abeille Assurances.
+                                Nous serions honorés de débuter cette aventure à vos côtés et de créer, ensemble, un impact social d&apos;envergure pour La Fabrique Abeille Assurances.
                                 Cliquez ci-dessous pour nous soutenir ou échanger directement avec moi.
                             </p>
                             <button
