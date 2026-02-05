@@ -92,7 +92,7 @@ export default function AbeillePage() {
                 </section>
 
                 {/* Problem Section */}
-                <section className={styles.problemSection}>
+                <section id="enjeu" className={styles.problemSection}>
                     <div className={styles.container}>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -217,7 +217,7 @@ export default function AbeillePage() {
                 </section>
 
                 {/* Pitch Section */}
-                <section className={styles.section}>
+                <section id="concept" className={styles.section}>
                     <div className={styles.container}>
                         <div className={styles.pitchContent}>
                             <motion.div
@@ -266,7 +266,7 @@ export default function AbeillePage() {
                 </section>
 
                 {/* Strategy Section */}
-                <section className={styles.section} style={{ background: '#f8fafc' }}>
+                <section id="strategie" className={styles.section} style={{ background: '#f8fafc' }}>
                     <div className={styles.container}>
                         <div className={styles.pitchText} style={{ margin: '0 auto 4rem' }}>
                             <span className={styles.tagline}>Stratégie & Impact</span>
@@ -344,7 +344,7 @@ export default function AbeillePage() {
                 </section>
 
                 {/* Multidimensional Impact */}
-                <section className={styles.problemSection} style={{ background: 'var(--brand-indigo)' }}>
+                <section id="impacts" className={styles.problemSection} style={{ background: 'var(--brand-indigo)' }}>
                     <div className={styles.container}>
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -401,7 +401,7 @@ export default function AbeillePage() {
                 </section>
 
                 {/* Team & Vision */}
-                <section className={styles.teamSection}>
+                <section id="equipe" className={styles.teamSection}>
                     <div className={styles.container}>
                         <div className={styles.teamGrid}>
                             <motion.div

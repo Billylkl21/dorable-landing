@@ -43,7 +43,11 @@
 .linksWrapper {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2.5rem;
+}
+
+.linksWrapperAbeille {
+    gap: 1.5rem;
 }
 
 .logoLink {
