@@ -508,14 +508,17 @@ export default function AbeillePage() {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="serif">Soutenez Dorable à La Fabrique Abeille Assurances</h2>
-                            <p>Ensemble, redonnons du sens à nos connexions et de la vigueur à nos villes.</p>
+                            <h2 className="serif">Merci d&apos;avoir pris le temps de découvrir Dorable.</h2>
+                            <p>
+                                Si notre vision vous résonne, nous serions honorés de vous compter parmi nos parrains pour La Fabrique Abeille Assurances.
+                                Cliquez ci-dessous pour nous soutenir ou échanger directement avec moi.
+                            </p>
                             <button
                                 onClick={() => setIsContactModalOpen(true)}
                                 className="button-premium"
                                 style={{ border: 'none', cursor: 'pointer' }}
                             >
-                                Devenir Parrain du Projet <ArrowRight size={20} />
+                                Devenir mon Parrain & Me contacter <ArrowRight size={20} />
                             </button>
                         </motion.div>
                     </div>
