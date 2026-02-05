@@ -15,6 +15,7 @@ import {
 import Link from 'next/link';
 import IPhoneMockup from '@/components/IPhoneMockup';
 import ContactModal from '@/components/ContactModal';
+import CountdownTimer from '@/components/CountdownTimer';
 import styles from './abeille.module.css';
 
 function Counter({ value, suffix = '', prefix = '', decimals = 0 }: { value: number; suffix?: string; prefix?: string; decimals?: number }) {
@@ -87,6 +88,9 @@ export default function AbeillePage() {
                         <motion.p variants={itemVariants}>
                             Transformer l&apos;isolement numérique en vitalité réelle pour nos territoires.
                         </motion.p>
+
+                        <CountdownTimer />
+
                         <motion.div variants={itemVariants} className={styles.heroImageContainer}>
                             <div style={{ maxWidth: '300px', margin: '0 auto' }}>
                                 <IPhoneMockup videoSrc="/videos/app-demo.mp4" />
