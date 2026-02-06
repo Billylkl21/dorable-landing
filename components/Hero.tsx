@@ -9,7 +9,6 @@ import IPhoneMockup from './IPhoneMockup';
 import Countdown from './Countdown';
 
 export default function Hero() {
-    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [sponsor, setSponsor] = useState('');
     const [submitted, setSubmitted] = useState(false);
@@ -23,7 +22,7 @@ export default function Hero() {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ name, email, sponsor }),
+                    body: JSON.stringify({ name: '', email, sponsor }),
                 });
                 setSubmitted(true);
             } catch (error) {
@@ -92,16 +91,6 @@ export default function Hero() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.2 }}
                                 >
-                                    <input
-                                        type="text"
-                                        placeholder="Prénom"
-                                        className={styles.waitlistInput}
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        style={{ width: '80px', flexShrink: 0 }}
-                                        required
-                                    />
-                                    <div style={{ width: '1px', height: '20px', background: 'rgba(0,0,0,0.1)' }}></div>
                                     <input
                                         type="email"
                                         placeholder="Email"
