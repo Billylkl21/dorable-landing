@@ -205,7 +205,7 @@ export default function AbeillePage() {
                                     <div className={styles.statContent}>
                                         <h4><Counter value={5} />h<Counter value={21} /></h4>
                                         <p>Consommation Vidéo</p>
-                                        <div className={styles.statDescription}>Les 15-24 ans passent en moyenne 5h21 par jour devant des vidéos, une immersion digitale qui réduit drastiquement les opportunités de rencontres réelles.</div>
+                                        <div className={styles.statDescription}>Les 15-24 ans passent en moyenne 5h21 par jour devant des vidéos, une immersion digitale qui réduit drastiquement les opportunités de sorties réelles.</div>
                                         <span className={styles.statSource}>Source : <a href="https://www.leparisien.fr/societe/ecrans-les-francais-de-15-a-24-ans-regardent-5h21-de-videos-par-jour-en-moyenne-03-04-2025-TURR7GWH2BFOFGKOVNVNOR65UI.php" target="_blank" rel="noopener noreferrer">Le Parisien, 2025</a></span>
                                     </div>
                                 </div>
@@ -238,7 +238,7 @@ export default function AbeillePage() {
                                 <span className={styles.tagline}>Le Concept</span>
                                 <h2 className="serif">Les réseaux sociaux captent notre attention, Dorable crée des connexions.</h2>
                                 <p>
-                                    Une carte interactive qui transforme l&apos;élan numérique en rencontre réelle.
+                                    Une carte interactive qui transforme l&apos;élan numérique en sortie réelle.
                                     L&apos;utilisateur crée une sortie : &quot;J&apos;ai envie de...&quot;, visible sous forme d&apos;émoji.
                                     Dorable bâtit la passerelle manquante : nous convertissons le temps d&apos;écran solitaire en vitalité économique.
                                 </p>
@@ -257,7 +257,7 @@ export default function AbeillePage() {
                                     <div className={styles.cardInnerImage}>
                                         <Image src="/images/activity_popup.png" alt="Activités" width={300} height={400} className={styles.projectCardImage} />
                                     </div>
-                                    <h3>Matching Affinitaire</h3>
+                                    <h3>Exploration par Catégories</h3>
                                     <p>Connectez-vous selon vos envies communes et disponibilités réelles.</p>
                                     <span className={styles.number}>02</span>
                                 </motion.div>
@@ -265,7 +265,7 @@ export default function AbeillePage() {
                                     <div className={styles.cardInnerImage}>
                                         <Image src="/images/messages.png" alt="Messagerie" width={300} height={400} className={styles.projectCardImage} />
                                     </div>
-                                    <h3>Rencontre Réelle</h3>
+                                    <h3>Sortie Réelle</h3>
                                     <p>Une technologie au service de l&apos;expérience humaine concrète.</p>
                                     <span className={styles.number}>03</span>
                                 </motion.div>
@@ -291,7 +291,7 @@ export default function AbeillePage() {
                                 <h3>Indicateurs Clés (KPIs)</h3>
                                 <div className={styles.strategyItem}>
                                     <div className={styles.strategyHeader}>
-                                        <div className={styles.strategyLabel}>🎯 Rencontres Réelles</div>
+                                        <div className={styles.strategyLabel}>🎯 Sorties Réelles</div>
                                         <div className={styles.strategyValue}>Priorité #1</div>
                                     </div>
                                     <div className={styles.progressBar}><motion.div className={styles.progressFill} initial={{ width: 0 }} whileInView={{ width: '100%' }} transition={{ duration: 1, delay: 0.5 }} /></div>
@@ -337,7 +337,7 @@ export default function AbeillePage() {
                                         <div className={styles.strategyValue}>30%</div>
                                     </div>
                                     <div className={styles.progressBar}><motion.div className={styles.progressFill} initial={{ width: 0 }} whileInView={{ width: '30%' }} transition={{ duration: 1, delay: 0.9 }} /></div>
-                                    <p className={styles.strategyDescription}>Optimisation de l&apos;IA de matching et Intégration des Lieux Partenaires.</p>
+                                    <p className={styles.strategyDescription}>Optimisation du système de recommandation d&apos;activités et Intégration des Lieux Partenaires.</p>
                                 </div>
                                 <div className={styles.strategyItem}>
                                     <div className={styles.strategyHeader}>
@@ -374,7 +374,7 @@ export default function AbeillePage() {
                                         <Image src="/images/mission_inclusivity.png" alt="Lien Social" width={100} height={100} className={styles.impactImage} />
                                     </div>
                                     <h4 style={{ color: '#0d9488' }}>Lien Social</h4>
-                                    <p>Transformation de l&apos;isolement numérique en rencontres physiques et solidaires au cœur de la ville.</p>
+                                    <p>Transformation de l&apos;isolement numérique en sorties physiques et solidaires au cœur de la ville.</p>
                                 </div>
                                 <div className={styles.impactItem}>
                                     <div className={styles.impactImageWrapper}>

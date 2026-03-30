@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Footer() {
     const pathname = usePathname();
     const isAbeillePage = pathname === '/abeille';
+    const isEnglish = pathname.startsWith('/en');
 
     return (
         <footer className={styles.footer}>
@@ -19,8 +20,10 @@ export default function Footer() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        La vie est trop belle<br />
-                        <span className={styles.statementHighlight}>pour la vivre derrière un écran.</span>
+                        {isEnglish ? "Life is too short" : "La vie est trop belle"}<br />
+                        <span className={styles.statementHighlight}>
+                            {isEnglish ? "to live it behind a screen." : "pour la vivre derrière un écran."}
+                        </span>
                     </motion.p>
                 </div>
             )}
@@ -39,15 +42,15 @@ export default function Footer() {
 
             <div className={styles.footerBottom}>
                 <div style={{ marginBottom: '1rem', fontSize: '0.8rem', opacity: 0.5, textAlign: 'center' }}>
-                    Candidat - La Fabrique Abeille Assurances • Lutter contre la solitude
+                    {isEnglish ? "Candidate - La Fabrique Abeille Assurances • Fighting Loneliness" : "Candidat - La Fabrique Abeille Assurances • Lutter contre la solitude"}
                 </div>
                 <div className={styles.links}>
-                    <a href="/legal" className={styles.link}>Mentions Légales</a>
-                    <a href="/privacy" className={styles.link}>Confidentialité</a>
-                    <a href="/health-privacy" className={styles.link}>Santé</a>
-                    <a href="/terms" className={styles.link}>CGU</a>
-                    <a href="/safety" className={styles.link}>Sécurité</a>
-                    <a href="/cookies" className={styles.link}>Cookies</a>
+                    <a href={isEnglish ? "/en/legal" : "/legal"} className={styles.link}>{isEnglish ? "Legal Notice" : "Mentions Légales"}</a>
+                    <a href={isEnglish ? "/en/privacy" : "/privacy"} className={styles.link}>{isEnglish ? "Privacy Policy" : "Confidentialité"}</a>
+                    <a href={isEnglish ? "/en/health-privacy" : "/health-privacy"} className={styles.link}>{isEnglish ? "Health Data" : "Santé"}</a>
+                    <a href={isEnglish ? "/en/terms" : "/terms"} className={styles.link}>{isEnglish ? "Terms/EULA" : "CGU"}</a>
+                    <a href={isEnglish ? "/en/support" : "/support"} className={styles.link}>{isEnglish ? "Support" : "Support"}</a>
+                    <a href={isEnglish ? "/en/cookies" : "/cookies"} className={styles.link}>{isEnglish ? "Cookies" : "Cookies"}</a>
                 </div>
                 <p className={styles.copyright}>© 2025 Dorable. Paris.</p>
             </div>

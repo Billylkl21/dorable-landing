@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import styles from './Header.module.css';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import WaitlistModal from './WaitlistModal';
 import ContactModal from './ContactModal';
 
@@ -13,6 +13,7 @@ import Image from 'next/image';
 export default function Header() {
     const pathname = usePathname();
     const isAbeillePage = pathname === '/abeille';
+    const isEnglish = pathname.startsWith('/en');
     const [scrolled, setScrolled] = useState(false);
     const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
     const [isContactOpen, setIsContactOpen] = useState(false);
@@ -21,6 +22,8 @@ export default function Header() {
     useMotionValueEvent(scrollY, "change", (latest) => {
         setScrolled(latest > 50);
     });
+
+    const newLanguagePath = isEnglish ? (pathname.replace('/en', '') || '/') : (pathname === '/' ? '/en' : `/en${pathname}`);
 
     return (
         <motion.header
@@ -54,11 +57,20 @@ export default function Header() {
                         </>
                     ) : (
                         <>
-                            <Link href="/#concept" className={styles.link}>Le Concept</Link>
-                            <Link href="/#esprit" className={styles.link}>L&apos;adorable</Link>
-                            <Link href="/#lifestyle" className={styles.link}>L&apos;Art de Vivre</Link>
+                            <Link href={isEnglish ? "/en#concept" : "/#concept"} className={styles.link}>
+                                {isEnglish ? "Concept" : "Le Concept"}
+                            </Link>
+                            <Link href={isEnglish ? "/en#esprit" : "/#esprit"} className={styles.link}>
+                                {isEnglish ? "Vibe" : "L'adorable"}
+                            </Link>
+                            <Link href={isEnglish ? "/en#lifestyle" : "/#lifestyle"} className={styles.link}>
+                                {isEnglish ? "Lifestyle" : "L'Art de Vivre"}
+                            </Link>
+                            <Link href={newLanguagePath} prefetch={true} className={styles.langSwitch}>
+                                {isEnglish ? '🇫🇷 FR' : '🇺🇸 EN'}
+                            </Link>
                             <button onClick={() => setIsWaitlistOpen(true)} className={styles.cta}>
-                                Rejoindre la liste
+                                {isEnglish ? "Join waitlist" : "Rejoindre la liste"}
                             </button>
                         </>
                     )}

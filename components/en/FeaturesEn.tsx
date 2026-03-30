@@ -3,27 +3,27 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import styles from './Features.module.css';
+import styles from '../Features.module.css';
 
 const featureData = [
     {
         id: 1,
-        title: "Explorez votre ville",
-        text: "La carte interactive est votre nouveau terrain de jeu. Repérez en un clin d'œil les événements, les lieux insolites et les personnes connectées autour de vous.",
+        title: "Explore your city",
+        text: "The interactive map is your new playground. Instantly spot events, unique places, and connected people around you.",
         image: "/images/map.png",
         number: "01"
     },
     {
         id: 2,
-        title: "Proposez une sortie",
-        text: "Une envie subite ? Un café, une expo, un jogging ? Créez une activité en 30 secondes et laissez la magie opérer. Les intéressés vous rejoindront.",
+        title: "Suggest an outing",
+        text: "A sudden craving? A coffee, an exhibition, a jog? Create an activity in 30 seconds and let the magic happen. Interested people will join you.",
         image: "/images/activity_popup.png",
         number: "02"
     },
     {
         id: 3,
-        title: "Sortez pour de vrai",
-        text: "Le but ultime. Ici, la messagerie de groupe sert à organiser les détails de la sortie. Rangez votre téléphone et vivez l'instant présent.",
+        title: "Go out for real",
+        text: "The ultimate goal. Here, group messaging is only used to organize the outing details. Put your phone away and live in the moment.",
         image: "/images/messages.png",
         number: "03"
     }
@@ -79,7 +79,7 @@ function FeatureStep({ feature, index, activeStep }: { feature: typeof featureDa
     );
 }
 
-export default function Features() {
+export default function FeaturesEn() {
     const [activeStep, setActiveStep] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -114,9 +114,9 @@ export default function Features() {
     return (
         <section id="concept" className={styles.section}>
             <div className={styles.header}>
-                <span className={styles.label}>Mode d'Emploi</span>
+                <span className={styles.label}>How it works</span>
                 <h2 className="title-xl" style={{ fontSize: '2.5rem' }}>
-                    Comment ça marche
+                    The play-by-play
                 </h2>
             </div>
             <div className={styles.container} ref={containerRef}>

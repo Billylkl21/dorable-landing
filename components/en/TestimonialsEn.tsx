@@ -2,46 +2,46 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import styles from './Testimonials.module.css';
+import styles from '../Testimonials.module.css';
 
 const testimonials = [
     {
         id: 1,
-        text: "Dorable rend les sorties tellement plus simples. Je ne me prends plus la tête pour organiser, je rejoins juste ce qui me plaît.",
+        text: "Dorable makes going out so much easier. No more headaches organizing, I just join what sounds good to me.",
         name: "Clara M.",
-        role: "Membre depuis Décembre 2025",
+        role: "Member since Dec 2025",
         avatar: "https://i.pravatar.cc/150?img=5",
         rating: 5.0
     },
     {
         id: 2,
-        text: "J'adore la communauté. Ça fait du bien de savoir qu'on n'est pas seul à vouloir sortir spontanément à Paris.",
+        text: "I love the community. It feels great knowing you aren't alone wanting to spontaneously go out in the city.",
         name: "Thomas R.",
-        role: "Membre Actif",
+        role: "Active Member",
         avatar: "https://i.pravatar.cc/150?img=8",
         rating: 5.0
     },
     {
         id: 3,
-        text: "L'interface est super fluide et clean. Rien de compliqué, on va à l'essentiel : la sortie.",
+        text: "The interface is super smooth and clean. Nothing complicated, it gets straight to the point: the outing.",
         name: "Sarah L.",
-        role: "Membre depuis Novembre 2025",
+        role: "Member since Nov 2025",
         avatar: "https://i.pravatar.cc/150?img=10",
         rating: 5.0
     },
     {
         id: 4,
-        text: "Franchement utile. Ça me permet de découvrir des expos que j'aurais ratées et de partager ces moments avec d'autres curieux.",
+        text: "Honestly super useful. It allows me to discover exhibitions I would have missed and to share these moments with other curious people.",
         name: "Julie B.",
-        role: "Membre depuis Décembre 2025",
+        role: "Member since Dec 2025",
         avatar: "https://i.pravatar.cc/150?img=16",
         rating: 5.0
     },
     {
         id: 5,
-        text: "Le concept est génial. J'ai trouvé un partenaire de tennis grâce à l'app en 2 heures. Efficacité redoutable.",
+        text: "The concept is brilliant. I found a tennis partner through the app in 2 hours. Formidable efficiency.",
         name: "Lucas P.",
-        role: "Membre Actif",
+        role: "Active Member",
         avatar: "https://i.pravatar.cc/150?img=11",
         rating: 5.0
     }
@@ -53,13 +53,13 @@ const StarIcon = () => (
     </svg>
 );
 
-export default function Testimonials() {
+export default function TestimonialsEn() {
     return (
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <span className={styles.badge}>Ce qu'ils disent de nous</span>
-                    <h2 className={styles.title}>Ils adorent l'expérience</h2>
+                    <span className={styles.badge}>What they say about us</span>
+                    <h2 className={styles.title}>They love the experience</h2>
                 </div>
 
                 <div className={styles.marqueeContainer}>

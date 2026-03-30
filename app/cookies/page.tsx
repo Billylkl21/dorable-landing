@@ -5,14 +5,13 @@ export default function CookiesPage() {
         paddingBottom: '0.5rem',
         marginBottom: '1.5rem',
         marginTop: '2.5rem',
-        fontFamily: 'var(--font-sans)',
         fontWeight: '700',
         color: 'var(--text-main)'
     };
 
     return (
-        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: 'var(--text-main)', lineHeight: '1.7' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Cookies</h1>
+        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', color: 'var(--text-main)', lineHeight: '1.7' }}>
+            <h1 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Cookies</h1>
             <p style={{ marginBottom: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>Dernière mise à jour : 30 Décembre 2025</p>
 
             <section>

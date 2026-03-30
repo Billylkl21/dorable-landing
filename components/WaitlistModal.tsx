@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { createPortal } from 'react-dom';
+import { usePathname } from 'next/navigation';
 import styles from './WaitlistModal.module.css';
 
 interface WaitlistModalProps {
@@ -12,6 +13,8 @@ interface WaitlistModalProps {
 }
 
 export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
+    const pathname = usePathname();
+    const isEnglish = pathname.startsWith('/en');
     const [email, setEmail] = useState('');
     const [sponsor, setSponsor] = useState('');
     const [submitted, setSubmitted] = useState(false);
@@ -69,9 +72,13 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                 <X size={20} />
                             </button>
 
-                            <h2 className={styles.title}>Rejoindre l&apos;aventure</h2>
+                            <h2 className={styles.title}>{isEnglish ? "Join the adventure" : "Rejoindre l'aventure"}</h2>
                             <p className={styles.subtitle}>
-                                Inscrivez-vous pour un accès en avant-première et bénéficiez de <strong>tarifs exceptionnels à vie</strong> réservés aux premiers membres.
+                                {isEnglish ? (
+                                    <>Sign up for early access and get <strong>exclusive lifetime rates</strong> reserved for our first members.</>
+                                ) : (
+                                    <>Inscrivez-vous pour un accès en avant-première et bénéficiez de <strong>tarifs exceptionnels à vie</strong> réservés aux premiers membres.</>
+                                )}
                             </p>
 
                             {submitted ? (
@@ -80,7 +87,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                 >
-                                    🎉 Merci ! Vous êtes sur la liste.
+                                    {isEnglish ? "🎉 Thank you! You're on the list." : "🎉 Merci ! Vous êtes sur la liste."}
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleSubmit} className={styles.form}>
@@ -96,17 +103,17 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                                         />
                                     </div>
                                     <div className={styles.inputGroup}>
-                                        <label className={styles.label}>Code Parrain (Optionnel)</label>
+                                        <label className={styles.label}>{isEnglish ? "Sponsor Code (Optional)" : "Code Parrain (Optionnel)"}</label>
                                         <input
                                             type="text"
                                             className={styles.input}
                                             value={sponsor}
                                             onChange={(e) => setSponsor(e.target.value)}
-                                            placeholder="Ex: LUCAS10"
+                                            placeholder={isEnglish ? "Ex: LUCAS10" : "Ex: LUCAS10"}
                                         />
                                     </div>
                                     <button type="submit" className={styles.submitButton}>
-                                        S&apos;inscrire sur la liste
+                                        {isEnglish ? "Join the list" : "S'inscrire sur la liste"}
                                     </button>
                                 </form>
                             )}

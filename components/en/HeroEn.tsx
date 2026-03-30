@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './Hero.module.css';
-import IPhoneMockup from './IPhoneMockup';
-import Countdown from './Countdown';
+import styles from '../Hero.module.css';
+import IPhoneMockup from '../IPhoneMockup';
+import Countdown from '../Countdown';
 
-export default function Hero() {
+export default function HeroEn() {
     const [email, setEmail] = useState('');
     const [sponsor, setSponsor] = useState('');
     const [submitted, setSubmitted] = useState(false);
@@ -50,21 +50,21 @@ export default function Hero() {
                     </motion.div>
 
                     <h1 className="title-xl reveal delay-1">
-                        Vos Envies. <br />
-                        <span className="serif" style={{ fontStyle: 'italic', fontWeight: 400 }}>En Bonne Compagnie.</span>
+                        Your Desires. <br />
+                        <span className="serif" style={{ fontStyle: 'italic', fontWeight: 400 }}>In Good Company.</span>
                     </h1>
 
                     <motion.p
                         className={`subtitle-lg reveal delay-2 ${styles.subtitle}`}
                         style={{ marginTop: '1.5rem' }}
                     >
-                        <strong>Notre réponse à la solitude : organiser des sorties spontanées autour d'expériences sociales.</strong> <br className="hidden md:block" />
-                        Dorable transforme instantanément vos envies et vos lieux préférés en sorties réelles. <br className="hidden md:block" />
+                        <strong>Our answer to loneliness: organizing spontaneous outings around social experiences.</strong> <br className="hidden md:block" />
+                        Dorable instantly transforms your desires and favorite places into real outings. <br className="hidden md:block" />
                         <span className={styles.activityLine}>
-                            Une envie de Japonais ? <span className={styles.icon3d}>🍣</span> D'une expo ? <span className={styles.icon3d}>🎨</span> D'un jogging ? <span className={styles.icon3d}>🏃</span> D'un Pilates ? <span className={styles.icon3d}>🧘‍♀️</span>
+                            Craving sushi? <span className={styles.icon3d}>🍣</span> An art exhibition? <span className={styles.icon3d}>🎨</span> A quick run? <span className={styles.icon3d}>🏃</span> Pilates? <span className={styles.icon3d}>🧘‍♀️</span>
                         </span>
                         <br />
-                        Retrouvons le plaisir de vivre la ville ensemble, simplement et maintenant.
+                        Let's rediscover the joy of experiencing the city together, simply and right now.
                     </motion.p>
 
                     {/* <Countdown /> */}
@@ -102,14 +102,14 @@ export default function Hero() {
                                     <div style={{ width: '1px', height: '20px', background: 'rgba(0,0,0,0.1)' }}></div>
                                     <input
                                         type="text"
-                                        placeholder="Parrain"
+                                        placeholder="Sponsor"
                                         className={styles.waitlistInput}
                                         value={sponsor}
                                         onChange={(e) => setSponsor(e.target.value)}
                                         style={{ width: '70px', flexShrink: 0 }}
                                     />
                                     <button type="submit" className={styles.waitlistButton}>
-                                        Rejoindre la liste
+                                        Join the list
                                     </button>
                                 </motion.form>
                             )}
@@ -135,7 +135,7 @@ export default function Hero() {
                                 </div>
                             </div>
                             <span className={styles.socialText}>
-                                <span style={{ fontWeight: 700 }}>+10k</span> parisiens intéressés
+                                <span style={{ fontWeight: 700 }}>+10k</span> parisians interested
                             </span>
                         </div>
 
@@ -185,7 +185,7 @@ export default function Hero() {
                         >
                             <span className={styles.floatingIcon}>📍</span>
                             <div className={styles.floatingMeta}>
-                                <span className={styles.floatingLabel}>1. Localisation</span>
+                                <span className={styles.floatingLabel}>1. Location</span>
                                 <span>Le Marais, Paris</span>
                             </div>
                         </motion.div>
@@ -227,8 +227,8 @@ export default function Hero() {
                         >
                             <span className={styles.floatingIcon}>👋</span>
                             <div className={styles.floatingMeta}>
-                                <span className={styles.floatingLabel}>3. Activité Rejointe</span>
-                                <span>Marie adore aussi !</span>
+                                <span className={styles.floatingLabel}>3. Activity Joined</span>
+                                <span>Marie loves it too!</span>
                             </div>
                         </motion.div>
 
@@ -248,8 +248,8 @@ export default function Hero() {
                         >
                             <span className={styles.floatingIcon}>🥂</span>
                             <div className={styles.floatingMeta}>
-                                <span className={styles.floatingLabel}>4. La Sortie</span>
-                                <span>On y va ensemble ?</span>
+                                <span className={styles.floatingLabel}>4. The Outing</span>
+                                <span>Let's go together?</span>
                             </div>
                         </motion.div>
 

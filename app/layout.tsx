@@ -8,7 +8,7 @@ import SecurityWrapper from '@/components/SecurityWrapper';
 import { outfit, playfair } from './fonts';
 
 export const metadata: Metadata = {
-  title: 'Dorable - Rencontrez-vous par les lieux',
+  title: 'Dorable',
   description: 'Lutter contre la solitude urbaine par le lien social spontané.',
 };
 

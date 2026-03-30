@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Phone, User } from 'lucide-react';
 import { createPortal } from 'react-dom';
+import { usePathname } from 'next/navigation';
 import styles from './ContactModal.module.css';
 
 interface ContactModalProps {
@@ -10,6 +11,8 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+    const pathname = usePathname();
+    const isEnglish = pathname.startsWith('/en');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -45,9 +48,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                 <div className={styles.avatarWrapper}>
                                     <User size={32} color="var(--brand-pink)" />
                                 </div>
-                                <h2 className={styles.title}>Contacter le Porteur de Projet</h2>
+                                <h2 className={styles.title}>{isEnglish ? "Contact the Founder" : "Contacter le Porteur de Projet"}</h2>
                                 <p className={styles.subtitle}>
-                                    Vous souhaitez soutenir <strong>Dorable</strong> ou échanger sur notre vision ? Billy est à votre entière disposition.
+                                    {isEnglish ? (
+                                        <>Want to support <strong>Dorable</strong> or discuss our vision? Billy is at your disposal.</>
+                                    ) : (
+                                        <>Vous souhaitez soutenir <strong>Dorable</strong> ou échanger sur notre vision ? Billy est à votre entière disposition.</>
+                                    )}
                                 </p>
                             </div>
 
@@ -57,7 +64,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         <User size={20} />
                                     </div>
                                     <div className={styles.details}>
-                                        <span className={styles.label}>Porteur de Projet</span>
+                                        <span className={styles.label}>{isEnglish ? "Founder" : "Porteur de Projet"}</span>
                                         <span className={styles.value}>Billy Lukale</span>
                                     </div>
                                 </div>
@@ -77,14 +84,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         <Phone size={20} />
                                     </div>
                                     <div className={styles.details}>
-                                        <span className={styles.label}>Téléphone</span>
+                                        <span className={styles.label}>{isEnglish ? "Phone" : "Téléphone"}</span>
                                         <span className={styles.value}>06 48 98 22 10</span>
                                     </div>
                                 </a>
                             </div>
 
                             <div className={styles.footer}>
-                                <p>Dorable — Le Réseau Social du Monde Réel</p>
+                                <p>Dorable — {isEnglish ? "The Real-World Social Network" : "Le Réseau Social du Monde Réel"}</p>
                             </div>
                         </motion.div>
                     </motion.div>

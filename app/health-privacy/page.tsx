@@ -5,14 +5,13 @@ export default function HealthPrivacyPage() {
         paddingBottom: '0.5rem',
         marginBottom: '1.5rem',
         marginTop: '2.5rem',
-        fontFamily: 'var(--font-sans)',
         fontWeight: '700',
         color: 'var(--text-main)'
     };
 
     return (
-        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: 'var(--text-main)', lineHeight: '1.7' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Données de Santé</h1>
+        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', color: 'var(--text-main)', lineHeight: '1.7' }}>
+            <h1 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Données de Santé</h1>
             <p style={{ marginBottom: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>Dernière mise à jour : 30 Décembre 2025</p>
 
             <section>
@@ -39,7 +38,7 @@ export default function HealthPrivacyPage() {
 
             <section>
                 <h2 style={sectionTitleStyle}>4. Vos Droits</h2>
-                <p>Vous avez un droit d'accès et de suppression permanent sur ces données. Contact : <strong>contact@dorable.app</strong></p>
+                <p>Vous avez un droit d'accès et de suppression permanent sur ces données. Contact : <strong>hello@dorable.com</strong></p>
             </section>
 
             <footer style={{ marginTop: '5rem', paddingTop: '2rem', borderTop: '1px solid rgba(0,0,0,0.08)', textAlign: 'center' }}>

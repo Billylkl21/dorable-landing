@@ -5,14 +5,13 @@ export default function LegalPage() {
         paddingBottom: '0.5rem',
         marginBottom: '1.5rem',
         marginTop: '2.5rem',
-        fontFamily: 'var(--font-sans)',
         fontWeight: '700',
         color: 'var(--text-main)'
     };
 
     return (
-        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', fontFamily: 'var(--font-sans)', color: 'var(--text-main)', lineHeight: '1.7' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Mentions Légales</h1>
+        <main style={{ padding: '12rem 2rem 6rem', maxWidth: '800px', margin: '0 auto', color: 'var(--text-main)', lineHeight: '1.7' }}>
+            <h1 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: '900' }}>Mentions Légales</h1>
             <p style={{ marginBottom: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>Dernière mise à jour : 30 Décembre 2025</p>
 
             <section>
@@ -22,7 +21,7 @@ export default function LegalPage() {
                 </p>
                 <p style={{ marginTop: '1rem' }}>
                     <strong>Siège social :</strong> 231 rue Saint-Honoré, 75001 Paris, France.<br />
-                    <strong>Contact :</strong> contact@dorable.app
+                    <strong>Contact :</strong> hello@dorable.com
                 </p>
             </section>
 
